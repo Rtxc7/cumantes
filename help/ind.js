@@ -174,43 +174,40 @@ exports.notNum = (q) => {
 exports.menu = (prefix, ucap, pushname2, jumlahUser, timebot, owner, jumlahHarian, jumlahCommand, sender, time, public, levelMenu, xpMenu, reqXp, uangku, role, Limitnya) => {
     return `\`\`\`Selamat ${ucap} Kak @${sender.split('@')[0]} 😳\`\`\`
 
-╭── 「 *BOT INFO* 」 ──
-│
-│❒͡  _*CHIKA BOT*_ 
-│❒͡ *Contact My Owner*
-│ *https://wa.me/${owner}*
-│❒͡ *Time: ${time}*
-│❒͡ *STATUS* :「 ${public} 」
-│
-╰── 「 *CHIKA BOT* 」 ──
+「 *BOT INFO* 」
 
-❉──────────────────❉  
-*Name* : *${pushname2}* 
-*Your API* : *https://wa.me/${sender.split('@')[0]}*
-*Limit* : *${Limitnya}*
+🚀 *Time: ${time}*
+💣 *Mode* :「 ${public} 」
 
 
-*Your Progress*:
-*Level: ${levelMenu}*
-*XP: ${xpMenu} / ${reqXp}*
-*Role: ${role}*
-*Your Balance: $${uangku}*
-❉──────────────────❉  
 
-*── 「 BOT STATUS 」 ──*
+┌────❉ *User Info* ❉
 
- ❏ *${timebot}*
+🕊 *Name* : *${pushname2}* 
+♻️ *API* : *wa.me/${sender.split('@')[0]}*
+🐣 *Limit* : *${Limitnya}*
+🐥 *Level: ${levelMenu}*
+🐤 *XP: ${xpMenu} / ${reqXp}*
+🌹 *Role: ${role}*
+🎉 *Your Balance: $${uangku}*
 
- 𒍮 *Auto-Regis User: ${jumlahUser}*
-
- 𒍮 *Total Hit Bot : ${jumlahCommand}*
-
- 𒍮 *Total Hit Today : ${jumlahHarian}*
-
-*── 「 CHIKA BOT 」 ──*
+└────❉ *Your Info* ❉
 
 
-*Official BOT By @0*`
+
+┌────❉ *Bot Info* ❉
+
+𒍮 *Auto-Regis User: ${jumlahUser}*
+𒍮 *Hit Bot : ${jumlahCommand}*
+𒍮 *Hit Today : ${jumlahHarian}*
+𒍮 *Runtime : ${timebot}*
+
+└────❉ *Felix Bot* ❉
+
+
+
+*Sponsor By @0
+*Sc BOT By Rasyid*`
 }
 
 exports.menuDownloader = (prefix) => {

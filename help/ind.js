@@ -220,64 +220,58 @@ exports.menuDownloader = (prefix) => {
 1. ${prefix}play
 usage: *${prefix}play judul*
 
-2. ${prefix}music
-usage: *${prefix}music judul*
-
-3. ${prefix}video
-usage: *${prefix}video judul*
-
-4. ${prefix}soundcloud
+2. ${prefix}soundcloud
 usage: *${prefix}*
 
-5. ${prefix}twitterdl
+3. ${prefix}twitterdl
 usage: *${prefix}*
 
-6. ${prefix}zippydl
+4. ${prefix}zippydl
 usage: *${prefix}zippydl link*
 
-7. ${prefix}drive
+5. ${prefix}drive
 usage: *${prefix}drive link*
 
-8. ${prefix}mediafire
+6. ${prefix}mediafire
 usage: *${prefix}mediafire link*
 
-9. ${prefix}jooxplay
+7. ${prefix}jooxplay
 usage: *${prefix}jooxplay judul*
 
-10. ${prefix}playmp4
+8. ${prefix}playmp4
 usage: *${prefix}playmp4 judul*
 
-11. ${prefix}playmp3
+9. ${prefix}playmp3
 usage: *${prefix}playmp3 judul*
 
-12. ${prefix}igstory
+10. ${prefix}igstory
 usage: *${prefix}igstory query*
 
-13. ${prefix}hintt
+11. ${prefix}hintt
 usage: *${prefix}hintt text*
 
-14. ${prefix}sendfile
+12. ${prefix}sendfile
 usage: *${prefix}sendfile name*
 
-15. ${prefix}cocofun
+13. ${prefix}cocofun
 usage: *${prefix}cocofun link*
 
-16. ${prefix}smule
+14. ${prefix}smule
 usage: *${prefix}smule link*
 
-17. ${prefix}instagram
+15. ${prefix}instagram
 usage: *${prefix}instagram link*
 
-18. ${prefix}facebook
+16. ${prefix}facebook
 usage: *${prefix}facebook link*
 
-19. ${prefix}ytsearch
+17. ${prefix}ytsearch
 usage: *${prefix}ytsearch judul*
 
-2p. ${prefix}igstalk
+18. ${prefix}igstalk
 usage: *${prefix}igstalk username*
 
-21. ${prefix}ghstalk
+19. ${prefix}ghstalk
 usage: *${prefix}ghstalk username*
     `
 }

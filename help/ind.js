@@ -213,67 +213,67 @@ exports.menuDownloader = (prefix) => {
     return `
 *── 「 DOWNLOADER 」 ──*
 
-1. *${prefix}play
+1. ${prefix}play
 usage: *${prefix}play judul*
 
-2. *${prefix}music
+2. ${prefix}music
 usage: *${prefix}music judul*
 
-3. *${prefix}video
+3. ${prefix}video
 usage: *${prefix}video judul*
 
-4. *${prefix}soundcloud
+4. ${prefix}soundcloud
 usage: *${prefix}*
 
-5. *${prefix}twitterdl
+5. ${prefix}twitterdl
 usage: *${prefix}*
 
-6. *${prefix}zippydl
+6. ${prefix}zippydl
 usage: *${prefix}zippydl link*
 
-7. *${prefix}drive
+7. ${prefix}drive
 usage: *${prefix}drive link*
 
-8. *${prefix}mediafire
+8. ${prefix}mediafire
 usage: *${prefix}mediafire link*
 
-9. *${prefix}jooxplay
+9. ${prefix}jooxplay
 usage: *${prefix}jooxplay judul*
 
-10. *${prefix}playmp4
+10. ${prefix}playmp4
 usage: *${prefix}playmp4 judul*
 
-11. *${prefix}playmp3
+11. ${prefix}playmp3
 usage: *${prefix}playmp3 judul*
 
-12. *${prefix}igstory
+12. ${prefix}igstory
 usage: *${prefix}igstory query*
 
-13. *${prefix}hintt
+13. ${prefix}hintt
 usage: *${prefix}hintt text*
 
-14. *${prefix}sendfile
+14. ${prefix}sendfile
 usage: *${prefix}sendfile name*
 
-15. *${prefix}cocofun
+15. ${prefix}cocofun
 usage: *${prefix}cocofun link*
 
-16. *${prefix}smule
+16. ${prefix}smule
 usage: *${prefix}smule link*
 
-17. *${prefix}instagram
+17. ${prefix}instagram
 usage: *${prefix}instagram link*
 
-18. *${prefix}facebook
+18. ${prefix}facebook
 usage: *${prefix}facebook link*
 
-19. *${prefix}ytsearch
+19. ${prefix}ytsearch
 usage: *${prefix}ytsearch judul*
 
-2p. *${prefix}igstalk
+2p. ${prefix}igstalk
 usage: *${prefix}igstalk username*
 
-21. *${prefix}ghstalk
+21. ${prefix}ghstalk
 usage: *${prefix}ghstalk username*
     `
 }
@@ -288,40 +288,40 @@ exports.menuPremi = (prefix) => {
     return `
 *── 「 PREMIUM 」 ──*
 
-1. *${prefix}ytdl
+1. ${prefix}ytdl
 usage: *${prefix}ytdl link*
 
-2. *${prefix}ytmp4
+2. ${prefix}ytmp4
 usage: *${prefix}ytmp4 link*
 
-3. *${prefix}ytmp3
+3. ${prefix}ytmp3
 usage: *${prefix}ytmp3 link*
 
-4. *${prefix}stickerwm
+4. ${prefix}stickerwm
 usage: *${prefix}stickerwm author|packname*
 
-5. *${prefix}asupan
+5. ${prefix}asupan
 usage: *-*
 
-6. *${prefix}ptlvid
+6. ${prefix}ptlvid
 usage: *-*
 
-7. *${prefix}spamcall
+7. ${prefix}spamcall
 usage: *${prefix}spamcall nomor_target*
 
-8. *${prefix}spamsms
+8. ${prefix}spamsms
 usage: *${prefix}spamsms nomor_target*
 
-9. *${prefix}nekosearch
+9. ${prefix}nekosearch
 usage: *${prefix}nekosearch judul*
 
-10. *${prefix}pinterest
+10. ${prefix}pinterest
 usage: *${prefix}pinterest query*
 
-11. *${prefix}addrespon
+11. ${prefix}addrespon
 usage: *${prefix}addrespon textnya|responnya*
 
-12. *${prefix}delrespon
+12. ${prefix}delrespon
 usage: *${prefix}delrespon text*
 `
 }
@@ -330,40 +330,40 @@ exports.menuSticker = (prefix) => {
     return `
 *── 「 STICKER 」 ──*
 
-1. *${prefix}toimg
+1. ${prefix}toimg
 usage: *-*
 
-2. *${prefix}togif
+2. ${prefix}togif
 usage: *-*
 
-3. *${prefix}tovid
+3. ${prefix}tovid
 usage: *-*
 
-4. *${prefix}linestickerdl
+4. ${prefix}linestickerdl
 usage: *${prefix}linestickerdl link*
 
-5. *${prefix}telesticker
+5. ${prefix}telesticker
 usage: *${prefix}telesticker link*
 
-6. *${prefix}petpet
+6. ${prefix}petpet
 usage: *-*
 
-7. *${prefix}bucinstick
+7. ${prefix}bucinstick
 usage: *-*
 
-8. *${prefix}dogestick
+8. ${prefix}dogestick
 usage: *-*
 
-9. *${prefix}gurastick
+9. ${prefix}gurastick
 usage: *-*
 
-10. *${prefix}patrick
+10. ${prefix}patrick
 usage: *-*
 
-11. *${prefix}waifustick
+11. ${prefix}waifustick
 usage: *-*
 
-12. *${prefix}animesticker
+12. ${prefix}animesticker
 usage: *-*
     `
 }
@@ -372,58 +372,58 @@ exports.menuWeeaboo = (prefix) => {
     return `
 *── 「 WEEABOO 」 ──*
 
-1. *${prefix}slap
+1. ${prefix}slap
 usage: *${prefix}slap @tag*
 
-2. *${prefix}pat
+2. ${prefix}pat
 usage: *${prefix}pat @tag*
 
-3. *${prefix}baka
+3. ${prefix}baka
 usage: *${prefix}baka @tag*
 
-4. *${prefix}hug
+4. ${prefix}hug
 usage: *${prefix}hug @tag*
 
-5. *${prefix}cium
+5. ${prefix}cium
 usage: *${prefix}cium @tag*
 
-6. *${prefix}waifu
+6. ${prefix}waifu
 usage: *-*
 
-7. *${prefix}kemono
+7. ${prefix}kemono
 usage: *-*
 
-8. *${prefix}elf
+8. ${prefix}elf
 usage: *-*
 
-9. *${prefix}konachan
+9. ${prefix}konachan
 usage: *-*
 
-10. *${prefix}fanart
+10. ${prefix}fanart
 usage: *-*
 
-11. *${prefix}quotesanime
+11. ${prefix}quotesanime
 usage: *-*
 
-12. *${prefix}wallnime
+12. ${prefix}wallnime
 usage: *-*
 
-13. *${prefix}wallpaper
+13. ${prefix}wallpaper
 usage: *-*
 
-14. *${prefix}neko
+14. ${prefix}neko
 usage: *-*
 
-15. *${prefix}genshininfo
+15. ${prefix}genshininfo
 usage: *${prefix}genshininfo chara*
 
-16. *${prefix}searchmanga
+16. ${prefix}searchmanga
 usage: *${prefix}searchmanga judul*
 
-17. *${prefix}searchanime
+17. ${prefix}searchanime
 usage: *${prefix}searchanime judul*
 
-18. *${prefix}whatanime
+18. ${prefix}whatanime
 usage: *${prefix}whatanime reply_image*
     `
 }
@@ -432,58 +432,58 @@ exports.menuFun = (prefix) => {
     return `
 *── 「 FUN FEATURE 」 ──*
 
-1. *${prefix}suit*
+1. ${prefix}suit*
 usage: *${prefix}suit batu/gunting/kertas*
 
-2. *${prefix}slot*
+2. ${prefix}slot*
 usage: *-*
 
-3. *${prefix}tictactoe*
+3. ${prefix}tictactoe*
 usage: *${prefix}tictactoe @tag*
 
-4. *${prefix}dadu*
+4. ${prefix}dadu*
 usage: *${prefix}dadu 1/6*
 
-5. *${prefix}tebakgambar*
+5. ${prefix}tebakgambar*
 usage: *-*
 
-6. *${prefix}family100*
+6. ${prefix}family100*
 usage: *-*
 
-7. *${prefix}siapaaku*
+7. ${prefix}siapaaku*
 usage: *-*
 
-8. *${prefix}mathkuis*
+8. ${prefix}mathkuis*
 usage: *-*
 
-9. *${prefix}tebakbendera*
+9. ${prefix}tebakbendera*
 usage: *-*
 
-10. *${prefix}tebaklirik*
+10. ${prefix}tebaklirik*
 usage: *-*
 
-11. *${prefix}asupan
+11. ${prefix}asupan
 usage: *-*
 
-12. *${prefix}joke
+12. ${prefix}joke
 usage: *-*
 
-13. *${prefix}meme
+13. ${prefix}meme
 usage: *-*
 
-14. *${prefix}wpsearch
+14. ${prefix}wpsearch
 usage: *${prefix}wpsearch judul*
 
-15. *${prefix}subreddit
+15. ${prefix}subreddit
 usage: *${prefix}subreddit query*
 
-16. *${prefix}fuckmylife
+16. ${prefix}fuckmylife
 usage: *-*
 
-17. *${prefix}memeindo
+17. ${prefix}memeindo
 usage: *-*
 
-18. *${prefix}darkjoke
+18. ${prefix}darkjoke
 usage: *-*
     `
 }
@@ -492,25 +492,25 @@ exports.menuImage = (prefix) => {
     return `
 *── 「 EFFECT AND MANIPULATION 」 ──*
 
-1. *${prefix}emoji
+1. ${prefix}emoji
 usage: *${prefix}emoji 🗿*
 
-2. *${prefix}ttp2
+2. ${prefix}ttp2
 usage: *${prefix}ttp2 text*
 
-3. *${prefix}sfire
+3. ${prefix}sfire
 usage: *${prefix}sfire send_image*
 
-4. *${prefix}attp
+4. ${prefix}attp
 usage: *${prefix}attp text*
 
-5. *${prefix}ttg
+5. ${prefix}ttg
 usage: *${prefix}ttg text*
 
-6. *${prefix}stickermeme
+6. ${prefix}stickermeme
 usage: *${prefix}stickername text*
 
-7. *${prefix}ttp
+7. ${prefix}ttp
 usage: *${prefix}ttp text*
     `
 }
@@ -519,13 +519,13 @@ exports.menuKerang = (prefix) => {
     return `
 *── 「 KERANG 」 ──*
 
-1. *${prefix}kapankah*
+1. ${prefix}kapankah*
 Usage: *${prefix}kapankah* text
 
-2. *${prefix}bisakah*
+2. ${prefix}bisakah*
 Usage: *${prefix}bisakah* text
 
-3. *${prefix}rate*
+3. ${prefix}rate*
 Usage: *${prefix}rate* pertanyaan
 
     `
@@ -535,112 +535,112 @@ exports.menuModeration = (prefix) => {
     return `
 *── 「 MODERATION GROUP 」 ──*
 
-1. *${prefix}getpic
+1. ${prefix}getpic
 usage: *${prefix}getpic @tag*
 
-2. *${prefix}tagme
+2. ${prefix}tagme
 usage: *-*
 
-3. *${prefix}kontak
+3. ${prefix}kontak
 usage: *${prefix}kontak nomor|nama*
 
-4. *${prefix}kontag
+4. ${prefix}kontag
 usage: *${prefix}kontag nomor|nama*
 
-5. *${prefix}hidetag
+5. ${prefix}hidetag
 usage: *${prefix}hidetag text*
 
-6. *${prefix}antidelete
+6. ${prefix}antidelete
 usage: *${prefix}antidelete aktif/mati*
 
-7. *${prefix}mutual
+7. ${prefix}mutual
 usage: *-*
 
-8. *${prefix}delete
+8. ${prefix}delete
 usage: *${prefix}delete reply_image_sticker*
 
-9. *${prefix}afk
+9. ${prefix}afk
 usage: *${prefix}afk query*
 
-10. *${prefix}grupinfo
+10. ${prefix}grupinfo
 usage: *-*
 
-11. *${prefix}add
+11. ${prefix}add
 usage: *${prefix}add reply/nomor*
 
-12. *${prefix}oadd
+12. ${prefix}oadd
 usage: *${prefix}oadd reply/nomor*
 
-13. *${prefix}kick
+13. ${prefix}kick
 usage: *${prefix}kick @tag/reply*
 
-14. *${prefix}okick
+14. ${prefix}okick
 usage: *${prefix}okick @tag/reply*
 
-15. *${prefix}promote
+15. ${prefix}promote
 usage: *${prefix}promote @tag/reply*
 
-16. *${prefix}opromote
+16. ${prefix}opromote
 usage: *${prefix}opromote @tag/reply*
 
-17. *${prefix}demote
+17. ${prefix}demote
 usage: *${prefix}demote @tag/reply*
 
-18. *${prefix}odemote
+18. ${prefix}odemote
 usage: *${prefix}odemote @tag/reply*
 
-19. *${prefix}linkgc
+19. ${prefix}linkgc
 usage: *${prefix}*
 
-20. *${prefix}leave
+20. ${prefix}leave
 usage: *${prefix}*
 
-21. *${prefix}setdesc
+21. ${prefix}setdesc
 usage: *${prefix}setdesc text*
 
-22. *${prefix}revoke
+22. ${prefix}revoke
 usage: *-*
 
-23. *${prefix}setgroupname
+23. ${prefix}setgroupname
 usage: *${prefix}setgroupname text*
 
-24. *${prefix}sider
+24. ${prefix}sider
 usage: *-*
 
-25. *${prefix}group
+25. ${prefix}group
 usage: *${prefix}group disable/enable/close/open*
 
-26. *${prefix}setppgrup
+26. ${prefix}setppgrup
 usage: *-*
 
-27. *${prefix}tagall
+27. ${prefix}tagall
 usage: *${prefix}tagall query*
 
-28. *${prefix}otagall
+28. ${prefix}otagall
 usage: *${prefix}otagall query*
 
-29. *${prefix}antibadword
+29. ${prefix}antibadword
 usage: *${prefix}antibadword enable/disable*
 
-30. *${prefix}mute
+30. ${prefix}mute
 usage: *${prefix}mute enable/disable*
 
-31. *${prefix}antilink
+31. ${prefix}antilink
 usage: *${prefix}antilink enable/disable*
 
-32. *${prefix}antiviewonce
+32. ${prefix}antiviewonce
 usage: *${prefix}antiviewonce enable/disable*
 
-33. *${prefix}welcome
+33. ${prefix}welcome
 usage: *${prefix}welcome enable/disable*
 
-34. *${prefix}autosticker
+34. ${prefix}autosticker
 usage: *${prefix}autosticker enable/disable*
 
-35. *${prefix}nsfw
+35. ${prefix}nsfw
 usage: *${prefix}nsfw enable/disable*
 
-36. *${prefix}leveling
+36. ${prefix}leveling
 usage: *${prefix}leveling enable/disable*
    `
 }
@@ -650,37 +650,37 @@ exports.menuNsfw = (prefix) => {
     return `
 *── 「 NSFW 」 ──*
 
-1. *${prefix}lewd
+1. ${prefix}lewd
 usage: *${prefix}lewd name*
 
-2. *${prefix}fetish
+2. ${prefix}fetish
 usage: *${prefix}fetish name*
 
-3. *${prefix}nhentai
+3. ${prefix}nhentai
 usage: *${prefix}nhentai code*
 
-4. *${prefix}nekoinfo
+4. ${prefix}nekoinfo
 usage: *${prefix}nekoinfo link*
 
-5. *${prefix}xnxxsearch
+5. ${prefix}xnxxsearch
 usage: *${prefix}xnxxsearch query*
 
-6. *${prefix}xhamstersearch
+6. ${prefix}xhamstersearch
 usage: *${prefix}xhamstersearch query*
 
-7. *${prefix}waifu18
+7. ${prefix}waifu18
 usage: *${prefix}*
 
-8. *${prefix}lewdavatar
+8. ${prefix}lewdavatar
 usage: *-*
 
-9. *${prefix}chiisaihentai
+9. ${prefix}chiisaihentai
 usage: *-*
 
-10. *${prefix}femdom
+10. ${prefix}femdom
 usage: *-*
 
-11. *${prefix}hololewd
+11. ${prefix}hololewd
 usage: *-*
     `
 }
@@ -689,52 +689,52 @@ exports.menuOwner = (prefix) => {
     return `
 *── 「 OWNER MENU 」 ──*
 
-1. *${prefix}premium*
+1. ${prefix}premium*
 usage: *${prefix}premium add/del*
 
-2. *${prefix}lreset*
+2. ${prefix}lreset*
 usage: *-*
 
-3. *${prefix}ban*
+3. ${prefix}ban*
 usage: *${prefix}ban add/del*
 
-4. *${prefix}listban*
+4. ${prefix}listban*
 usage: *-*
 
-5. *${prefix}clearall*
+5. ${prefix}clearall*
 usage: *-*
 
-6. *${prefix}public*
+6. ${prefix}public*
 usage: *-*
 
-7. *${prefix}self*
+7. ${prefix}self*
 usage: *-*
 
-8. *${prefix}shutdown*
+8. ${prefix}shutdown*
 usage: *-*
 
-9. *${prefix}setprefix*
+9. ${prefix}setprefix*
 usage: *${prefix}setprefix multi/nopref*
 
-10. *${prefix}setname*
+10. ${prefix}setname*
 usage: *${prefix}setname text*
 
-11. *${prefix}give*
+11. ${prefix}give*
 usage: *${prefix}give @tag/nomor jumlah_xp*
 
-12. *${prefix}setstat*
+12. ${prefix}setstat*
 usage: *${prefix}setstat text*
 
-13. *${prefix}bc*
+13. ${prefix}bc*
 usage: *${prefix}bc text*
 
-14. *${prefix}exif
+14. ${prefix}exif
 usage: *${prefix}exif author|packname*
 
-15. *${prefix}leaveall
+15. ${prefix}leaveall
 usage: *-*
 
-16. *${prefix}listgrup
+16. ${prefix}listgrup
 usage: *-*
    `
 }
@@ -743,22 +743,22 @@ exports.menuLeveling = (prefix) => {
     return `
 *── 「 LEVELING 」 ──*
 
-1. *${prefix}leaderboard
+1. ${prefix}leaderboard
 usage: *-*
 
-2. *${prefix}level
+2. ${prefix}level
 usage: *-*
 
-3. *${prefix}buygamelimit
+3. ${prefix}buygamelimit
 usage: *${prefix}buygamelimit jumlah*
 
-4. *${prefix}buylimit
+4. ${prefix}buylimit
 usage: *${prefix}buylimit jumlah*
 
-5. *${prefix}claim
+5. ${prefix}claim
 usage: *-*
 
-6. *${prefix}limit
+6. ${prefix}limit
 usage: *-*
     `
 }
@@ -767,16 +767,16 @@ exports.menuPrimbon = (prefix) => {
     return `
 *── 「 PRIMBON MENU 」 ──*
 
-1. *${prefix}artinama*
+1. ${prefix}artinama*
 usage: *${prefix}artinama text*
 
-2. *${prefix}artimimpi*
+2. ${prefix}artimimpi*
 usage: *${prefix}artimimpi text*
 
-3. *${prefix}pasangan*
+3. ${prefix}pasangan*
 usage: *${prefix}pasangan text*
 
-4. *${prefix}ramaljadian*
+4. ${prefix}ramaljadian*
 usage: *-*
     `
 }
@@ -785,31 +785,31 @@ exports.menuPray = (prefix) => {
     return `
 *── 「 PRAY 」 ──*
 
-1. *${prefix}hadis*
+1. ${prefix}hadis*
 Usage: *${prefix}hadis query*
 
-2. *${prefix}jadwalsholat*
+2. ${prefix}jadwalsholat*
 Usage: *${prefix}jadwalsholat kota*
 
-3. *${prefix}kisahnabi*
+3. ${prefix}kisahnabi*
 Usage: *${prefix}kisahnabi query*
 
-4. *${prefix}alquran*
+4. ${prefix}alquran*
 Usage: *${prefix}alquran query*
 
-5. *${prefix}surah*
+5. ${prefix}surah*
 usage: *${prefix}surah query*
 
-6. *${prefix}asmaulhusna*
+6. ${prefix}asmaulhusna*
 usage: *-*
 
-7. *${prefix}quranaudio*
+7. ${prefix}quranaudio*
 usage: *${prefix}quranaudio query*
 
-8. *${prefix}listsurah*
+8. ${prefix}listsurah*
 usage: *-*
 
-9. *${prefix}randomquran*
+9. ${prefix}randomquran*
 usage: *-*
     `
 }
@@ -818,82 +818,82 @@ exports.menuMisc = (prefix) => {
     return `
 *── 「 MEDIA AND MISC 」 ──*
 
-1. *${prefix}tolink*
+1. ${prefix}tolink*
 usage: *${prefix}tolink reply image*
 
-2. *${prefix}cuaca*
+2. ${prefix}cuaca*
 usage: *${prefix}cuaca query*
 
-3. *${prefix}jadwalbola*
+3. ${prefix}jadwalbola*
 usage: *-*
 
-5. *${prefix}berita*
+5. ${prefix}berita*
 usage: *${prefix}*
 
-6. *${prefix}corona*
+6. ${prefix}corona*
 usage: *-*
 
-7. *${prefix}jadwaltv*
+7. ${prefix}jadwaltv*
 usage: *-*
 
-8. *${prefix}movie*
+8. ${prefix}movie*
 usage: *${prefix}movie query*
 
-9. *${prefix}kalkulator*
+9. ${prefix}kalkulator*
 usage: *${prefix}kalkulator 1+1*
 
-10. *${prefix}jarak*
+10. ${prefix}jarak*
 usage: *${prefix}jarak query*
 
-11. *${prefix}hoax*
+11. ${prefix}hoax*
 usage: *-*
 
-12. *${prefix}mutual*
+12. ${prefix}mutual*
 usage: *-*
 
-13. *${prefix}resepmasakan*
+13. ${prefix}resepmasakan*
 usage: *${prefix}resepmasakan query*
 
-14. *${prefix}resep*
+14. ${prefix}resep*
 usage: *-*
 
-15. *${prefix}wallpapersearch*
+15. ${prefix}wallpapersearch*
 usage: *${prefix}wallpalersearch query*
 
-16. *${prefix}wiki*
+16. ${prefix}wiki*
 usage: *${prefix}wiki query*
 
-17. *${prefix}wikien*
+17. ${prefix}wikien*
 usage: *${prefix}wikien query*
 
-18. *${prefix}google*
+18. ${prefix}google*
 usage: *${prefix}google text*
 
-19. *${prefix}addsticker
+19. ${prefix}addsticker
 usage: *${prefix}addsticker reply*
 
-20. *${prefix}delsticker
+20. ${prefix}delsticker
 usage: *${prefix}delsticker name*
 
-21. *${prefix}liststicker
+21. ${prefix}liststicker
 usage: *-*
 
-22. *${prefix}addvn
+22. ${prefix}addvn
 usage: *${prefix}addvn reply*
 
-23. *${prefix}delvn
+23. ${prefix}delvn
 usage: *${prefix}delvn name*
 
-24. *${prefix}listvn
+24. ${prefix}listvn
 usage: *-*
 
-25. *${prefix}addimage
+25. ${prefix}addimage
 usage: *${prefix}addimage name*
 
-26. *${prefix}delimage
+26. ${prefix}delimage
 usage: *${prefix}delimage name*
 
-27. *${prefix}listimage
+27. ${prefix}listimage
 usage: *-*
     `
 }
@@ -902,28 +902,28 @@ exports.menuBot = (prefix) => {
     return `
 *── 「 BOT MENU 」 ──*
 
-1. *${prefix}status
+1. ${prefix}status
 usage: *-*
 
-2. *${prefix}speed
+2. ${prefix}speed
 usage: *-*
 
-3. *${prefix}runtime
+3. ${prefix}runtime
 usage: *-*
 
-4. *${prefix}sc
+4. ${prefix}sc
 usage: *-*
 
-5. *${prefix}donasi
+5. ${prefix}donasi
 usage: *-*
 
-6. *${prefix}report
+6. ${prefix}report
 usage: *${prefix}report keluhan*
 
-7. *${prefix}rules
+7. ${prefix}rules
 usage: *-*
 
-8. *${prefix}join
+8. ${prefix}join
 usage: *${prefix}join link_grup*
     `
 }

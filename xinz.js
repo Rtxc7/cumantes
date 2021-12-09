@@ -1926,7 +1926,7 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                     let a = await petpet(link, {resolution: 1080})
                     fs.unlinkSync(ran)
                     fs.writeFileSync('petpet.gif', a)
-                    await WSF.createSticker('petpet.gif', { type: 'full' ,pack: setting.packSticker,author: setting.authorSticker,categories: ["❤"," 😍"," 😘"," 💕"," 😻"," 💑"," 👩‍❤‍👩"," 👨‍❤‍👨"," 💏"," 👩‍❤‍💋‍👩"," 👨‍❤‍💋‍👨"," 🧡"," 💛"," 💚"," 💙"," 💜"," 🖤"," 💔"," ❣"," 💞"," 💓"," 💗"," 💖"," 💘"," 💝"," 💟"," ♥"," 💌"," 💋"," 👩‍❤️‍💋‍👩"," 👨‍❤️‍💋‍👨"," 👩‍❤️‍👨"," 👩‍❤️‍👩"," 👨‍❤️‍👨"," 👩‍❤️‍💋‍👨"," 👬"," 👭"," 👫"," 🥰"," 😚"," 😙"," 👄"," 🌹"," 😽"," ❣️"," ❤️","😀"," 😃"," 😄"," 😁"," 😆"," 😅"," 😂"," 🤣"," 🙂"," 😛"," 😝"," 😜"," 🤪"," 🤗"," 😺"," 😸"," 😹"," ☺"," 😌"," 😉"," 🤗"," 😊","☹"," 😣"," 😖"," 😫"," 😩"," 😢"," 😭"," 😞"," 😔"," 😟"," 😕"," 😤"," 😠"," 😥"," 😰"," 😨"," 😿"," 😾"," 😓"," 🙍‍♂"," 🙍‍♀"," 💔"," 🙁"," 🥺"," 🤕"," ☔️"," ⛈"," 🌩"," 🌧","😯"," 😦"," 😧"," 😮"," 😲"," 🙀"," 😱"," 🤯"," 😳"," ❗"," ❕"," 🤬"," 😡"," 😠"," 🙄"," 👿"," 😾"," 😤"," 💢"," 👺"," 🗯️"," 😒"," 🥵","👋","🎊"," 🎉"," 🎁"," 🎈"," 👯‍♂️"," 👯"," 👯‍♀️"," 💃"," 🕺"," 🔥"," ⭐️"," ✨"," 💫"," 🎇"," 🎆"," 🍻"," 🥂"," 🍾"," 🎂"," 🍰","🌃"]}).then((buffer) => xinz.sendMessage(from, buffer, sticker, { quoted: msg}))
+                    await WSF.createSticker('petpet.gif', { type: 'full' ,pack: setting.packSticker,author: setting.authorSticker,categories: ["❤"," 😍"," 😘"," 💕"," 😻"," 💑"," 👩‍❤‍👩"," 👨‍❤‍👨"," 💏"," 👩‍❤‍💋‍👩"," 👨‍❤‍💋‍👨"," 🧡"," 💛"," 💚"," 💙"," 💜"," 🖤"," 💔"," ❣"," 💞"," 💓"," 💗"," 💖"," 💘"," 💝"," 💟"," ♥"," 💌"," 💋"," 👩‍❤️‍💋‍👩"," 👨‍❤️‍💋‍👨"," 👩‍❤️‍👨"," 👩‍❤️‍👩"," 👨‍❤️‍👨"," 👩‍❤️‍💋‍👨"," 👬"," 👭"," 👫"," 🥰"," 😚"," 😙"," 👄"," 🌹"," 😽"," ❣️"," ❤️","😀"," 😃"," 😄"," 😁"," 😆"," 😅"," 😂"," 🤣"," 🙂"," 😛"," 😝"," 😜"," 🤪"," 🤗"," 😺"," 😸"," 😹"," ☺"," 😌"," 😉"," 🤗"," 😊","☹"," 😣"," 😖"," 😫"," 😩"," 😢"," 😭"," 😞"," 😔"," 😟"," 😕"," 😤"," 😠"," 😥"," 😰"," 😨"," 😿"," 😾"," 😓"," 🙍‍♂"," 🙍‍♀"," 💔"," 🙁"," 🥺"," 🤕"," ☔️"," ⛈"," 🌩"," 🌧","😯"," 😦"," 😧"," 😮"," 😲"," 🙀"," 😱"," 🤯"," 😳"," ❗"," ❕"," 🤬"," 😡"," 😠"," 🙄"," 👿"," 😾"," 😤"," 💢"," 👺"," 🗯️"," 😒"," ??","👋","🎊"," 🎉"," 🎁"," 🎈"," 👯‍♂️"," 👯"," 👯‍♀️"," 💃"," 🕺"," 🔥"," ⭐️"," ✨"," 💫"," 🎇"," 🎆"," 🍻"," 🥂"," 🍾"," 🎂"," 🍰","🌃"]}).then((buffer) => xinz.sendMessage(from, buffer, sticker, { quoted: msg}))
                     fs.unlinkSync('petpet.gif')
                   	limitAdd(sender, limit)
                })
@@ -4036,66 +4036,6 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                     console.log(color('[PlayMp3]', 'red'), err)
                     reply(mess.error.api)
                 }
-                break
-                            case prefix+'video': case prefix+'videos': case prefix+'vidio': case prefix+'vidios':{
-                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length === 1) return reply(`Kirim perintah *${command} query*`)
-                reply(mess.wait)
-                yts(q)
-                .then((res) => {
-                    let yt = res.videos
-                        let list = []
-                        let startnum = 1
-                        for (var x of yt) {
-                        let yy = { title: 'Data ke-'+ startnum++,
-                        rows: [
-                           {
-                            title: `${x.title}`,
-                            description: `\n\n*Viewers: ${x.views}*\n*Duration: ${x.timestamp}*\n*Upload: ${x.ago}*\n*Url: ${x.url}*`,
-                            rowId: `${prefix}ytmp4 ${x.url}`
-                          }
-                        ]
-                        }
-                        list.push(yy)
-                    }
-                   xinz.sendListMsg(from, `Video Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
-                })
-                .catch((err) => {
-                    sendMess(ownerNumber, 'YT SEARCH Error : ' + err)
-                    console.log(color('[YT SEARCH]', 'red'), err)
-                    reply(mess.error.api)
-                })
-            }
-                break
-            case prefix+'music': case prefix+'musik':{
-                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length === 1) return reply(`Kirim perintah *${command} query*`)
-                reply(mess.wait)
-                yts(q)
-                .then((res) => {
-                    let yt = res.videos
-                        let list = []
-                        let startnum = 1
-                        for (var x of yt) {
-                        let yy = { title: 'Data ke-'+ startnum++,
-                        rows: [
-                           {
-                            title: `${x.title}`,
-                            description: `\n\n*Viewers: ${x.views}*\n*Duration: ${x.timestamp}*\n*Upload: ${x.ago}*\n*Url: ${x.url}*`,
-                            rowId: `${prefix}ytmp3 ${x.url}`
-                          }
-                        ]
-                        }
-                        list.push(yy)
-                    }
-                    xinz.sendListMsg(from, `Music Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
-                })
-                .catch((err) => {
-                    xinz.sendMess(ownerNumber[0], 'PlayMp3 Error : ' + err)
-                    console.log(color('[PlayMp3]', 'red'), err)
-                    reply(mess.error.api)
-                })
-            }
                 break
             case prefix+'playmp3':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)

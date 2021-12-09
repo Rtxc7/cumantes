@@ -4061,8 +4061,8 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                    xinz.sendListMsg(from, `Video Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
                 })
                 .catch((err) => {
-                    sendMess(ownerNumber, 'YT SEARCH Error : ' + err)
-                    console.log(color('[YT SEARCH]', 'red'), err)
+                    xinz.sendMess(ownerNumber[0], 'PlayMp3 Error : ' + err)
+                    console.log(color('[PlayMp3]', 'red'), err)
                     reply(mess.error.api)
                 })
             }

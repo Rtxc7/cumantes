@@ -1834,6 +1834,96 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
              		limitAdd(sender, limit)
                     }
                     break
+                    case prefix+'stickernobg': case prefix+'stikernobg': case prefix+'snobg': case prefix+'removebg': case prefix+'nobg':
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                if (isImage || isQuotedImage) {
+                    let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(msg).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : msg
+                    let media = await xinz.downloadAndSaveMediaMessage(encmedia)
+                        var file_name = getRandom('.png')
+                         var file_name2 = getRandom('.webp')
+                        request({
+                            url: `https://api.lolhuman.xyz/api/removebg?apikey=${lolkey}`,
+                            method: 'POST',
+                            formData: {
+                                "img": fs.createReadStream(media)
+                            },
+                            encoding: "binary"
+                        }, async function(error, response, body) {
+                            fs.unlinkSync(media)
+                            fs.writeFileSync(file_name, body, "binary")
+                            await ffmpeg(`./${file_name}`)
+                                .input(file_name)
+                                .on('start', function (cmd) {
+							    	console.log(`Started : ${cmd}`)
+				    			})
+                                .on('error', function(err) {
+                                    console.log(err)
+                                    reply(mess.error.api)
+                                    fs.unlinkSync(file_name)
+                                })
+                                .on('end', function() {
+								console.log('Finish')
+                                    exec(`webpmux -set exif ./sticker/data.exif ./${file_name2} -o ./${file_name2}`, async (error) => {
+                                    if (error) return reply(mess.error.api)
+									xinz.sendMessage(from, fs.readFileSync(file_name2), sticker, {quoted: msg})
+									limitAdd(sender, limit)
+                                    fs.unlinkSync(file_name)
+									fs.unlinkSync(file_name2)
+                                })
+							})
+                                .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                                .toFormat('webp')
+                                .save(file_name2)
+                        });
+                    } else if (isQuotedSticker && !quotedMsg.stickerMessage.isAnimated === true) {
+                    let encmedia = JSON.parse(JSON.stringify(msg).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+				    let media = await xinz.downloadAndSaveMediaMessage(encmedia)
+                  var ran = getRandom('.png')
+				  exec(`ffmpeg -i ${media} ${ran}`, async (err) => {
+						fs.unlinkSync(media)
+                       if (err) return reply('Gagal :V')   
+                        var file_name = getRandom('.png')
+                         var file_name2 = getRandom('.webp')
+                        request({
+                            url: `https://api.lolhuman.xyz/api/removebg?apikey=${lolkey}`,
+                            method: 'POST',
+                            formData: {
+                                "img": fs.createReadStream(ran)
+                            },
+                            encoding: "binary"
+                        }, async function(error, response, body) {
+                            fs.unlinkSync(ran)
+                            fs.writeFileSync(file_name, body, "binary")
+                            await ffmpeg(`./${file_name}`)
+                                .input(file_name)
+                                .on('start', function (cmd) {
+							    	console.log(`Started : ${cmd}`)
+				    			})
+                                .on('error', function(err) {
+                                    console.log(err)
+                                    reply(mess.error.api)
+                                    fs.unlinkSync(file_name)
+                                })
+                                .on('end', function() {
+								console.log('Finish')
+                                    exec(`webpmux -set exif ./sticker/data.exif ./${file_name2} -o ./${file_name2}`, async (error) => {
+                                    if (error) return reply(mess.error.api)
+									xinz.sendMessage(from, fs.readFileSync(file_name2), sticker, {quoted: msg})
+									limitAdd(sender, limit)
+                                    fs.unlinkSync(file_name)
+									fs.unlinkSync(file_name2)
+                                })
+							})
+                                .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                                .toFormat('webp')
+                                .save(file_name2)
+                        });
+                })
+                    } else {
+                        reply(`Kirim gambar dengan caption ${prefix}snobg atau tag gambar yang sudah dikirim`)
+                    }
+                    limitAdd(sender, limit)
+                    break
                 case prefix+'doge':
                 case prefix+'dogestick':{
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)

@@ -34,7 +34,6 @@ const nhSearch = require('nhentai-node-api');
 const nhentai = require('nhentai-js');
 const mathjs = require('mathjs');
 const tts = require('node-gtts');
-const request = require('request');
 const FormData = require('form-data');
 const getMime = require('file-type');
 const gis = require('g-i-s');
@@ -70,6 +69,7 @@ let ban = JSON.parse(fs.readFileSync('./database/ban.json'));
 let antilink = JSON.parse(fs.readFileSync('./database/antilink.json'));
 let autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'));
 let nsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'));
+let antivirtex = JSON.parse(fs.readFileSync('./database/antivirtex.json'));
 let antiviewonce = JSON.parse(fs.readFileSync('./database/antiviewonce.json'));
 let badword = JSON.parse(fs.readFileSync('./database/badword.json'));
 let grupbadword = JSON.parse(fs.readFileSync('./database/grupbadword.json'));
@@ -258,6 +258,7 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
         const isAfkOn = afk.checkAfkUser(sender, _afk)
         const isAntiLink = isGroup ? antilink.includes(from) : false
         const isAntiVO = isGroup ? antiviewonce.includes(from) : false
+        const isAntiVirtex = isGroup ? antivirtex.includes(from) : false
         const isWelcome = isGroup ? welcome.includes(from) : false
         const isAutoSticker = isGroup ? autosticker.includes(from) : false
         const isNsfw = isGroup ? nsfw.includes(from) : false
@@ -394,6 +395,14 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 xinz.sendMessage(from, fs.readFileSync(`./media/audio/${chats}.mp3`), audio, { quoted: msg, ptt: true})
             }
         }
+        
+                if (isGroup && isAntiVirtex && !isOwner && !isGroupAdmins && isBotGroupAdmins){
+            if (chats.length >= 7000) {
+                reply(`*「 ANTI VIRTEX DETECTOR 」*\n\nSepertinya kamu mengirimkan Virtex, maaf kamu akan di kick`)
+                xinz.groupRemove(from, [sender])
+            }
+        }
+        
         if (isGroup && isAutoSticker) {
                 if (isImage || isVideo) {
                     let media = await xinz.downloadAndSaveMediaMessage(msg, `./sticker/${sender}`)
@@ -4828,7 +4837,7 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                 } catch {
                     var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
                 }
-                let ingfo = `*G R O U P I N F O*\n\n*Name :* ${groupName}\n*ID Grup :* ${from}\n*Dibuat :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n*Owner Grup :* @${groupMetadata.owner.split('@')[0]}\n*Jumlah Admin :* ${groupAdmins.length}\n*Jumlah Peserta :* ${groupMembers.length}\n*Welcome :* ${isWelcome ? 'Aktif' : 'Mati'}\n*AutoSticker :* ${isAutoSticker ? 'Aktif' : 'Mati'}\n*Nsfw :* ${isNsfw ? 'Aktif' : 'Mati'}\n*AntiLink :* ${isAntiLink ? 'Aktif' : 'Mati'}\n*AntiViewOnce :* ${isAntiVO ? 'Aktif' : 'Mati'}\n*AntiBadword :* ${isBadword ? 'Aktif' : 'Mati'}\n*Desc :* \n${groupMetadata.desc}`
+                let ingfo = `*G R O U P I N F O*\n\n*Name :* ${groupName}\n*ID Grup :* ${from}\n*Dibuat :* ${moment(`${groupMetadata.creation}` * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n*Owner Grup :* @${groupMetadata.owner.split('@')[0]}\n*Jumlah Admin :* ${groupAdmins.length}\n*Jumlah Peserta :* ${groupMembers.length}\n*Welcome :* ${isWelcome ? 'Aktif' : 'Mati'}\n*AutoSticker :* ${isAutoSticker ? 'Aktif' : 'Mati'}\n*Nsfw :* ${isNsfw ? 'Aktif' : 'Mati'}\n*AntiLink :* ${isAntiLink ? 'Aktif' : 'Mati'}\n*AntiVirtex :* ${isAntiVirtex ? 'Aktif' : 'Mati'}\n*AntiViewOnce :* ${isAntiVO ? 'Aktif' : 'Mati'}\n*AntiBadword :* ${isBadword ? 'Aktif' : 'Mati'}\n*Desc :* \n${groupMetadata.desc}`
                 xinz.sendMessage(from, await getBuffer(pic), image, {quoted: msg, caption: ingfo, contextInfo: {"mentionedJid": [groupMetadata.owner.replace('@c.us', '@s.whatsapp.net')]}})
                 break
            case prefix+'add': case prefix+'oadd':
@@ -5176,6 +5185,25 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                     reply('antiviewonce grup nonaktif')
                 } else {
                     testqq(from, `antiviewonce`)
+                }
+                break
+                case prefix+'antivirtex':
+                if (!isGroup) return reply(mess.OnlyGrup)
+                if (!isGroupAdmins && !isOwner) return reply(mess.GrupAdmin)
+                if (!isBotGroupAdmins) return reply(mess.BotAdmin)
+                if (args.length === 1) return reply(`Pilih enable atau disable`)
+                if (args[1].toLowerCase() === 'enable'){
+                    if (isAntiVirtex) return reply(`Udah aktif`)
+                    antivirtex.push(from)
+					fs.writeFileSync('./database/antivirtex.json', JSON.stringify(antivirtex))
+					reply('Antilink grup aktif')
+                } else if (args[1].toLowerCase() === 'disable'){
+                    let anu = antivirtex.indexOf(from)
+                    antivirtex.splice(anu, 1)
+                    fs.writeFileSync('./database/antivirtex.json', JSON.stringify(antivirtex))
+                    reply('antivirtex grup nonaktif')
+                } else {
+                    testqq(from, `antivirtex`)
                 }
                 break
             case prefix+'welcome':

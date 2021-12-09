@@ -40,7 +40,6 @@
     "node-gtts": "^2.0.2",
     "parse-ms": "^2.1.0",
     "pet-pet-gif": "^1.0.9",
-    "request": "^2.88.2",
     "qrcode": "^1.4.4",
     "wa-sticker-formatter": "git+https://github.com/rashidsiregar28/wa-sticker-formatter.git",
     "yt-search": "^2.8.0"

@@ -495,6 +495,35 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 tebakgambar.splice(game.getTGPosi(from, tebakgambar), 1)
             }
         }
+        if (game.isfam(from, family100) && isUser){
+            var anjuy = game.getjawaban100(from, family100)
+            for (let i of anjuy){
+                if (chats.toLowerCase().includes(i)){
+                    var htgmi = Math.floor(Math.random() * 20) + 1
+                    addBalance(sender, htgmi, balance)
+                    await reply(`*Jawaban benar*\n*Jawaban :* ${i}\n*Hadiah :* $${htgmi}\n*Jawaban yang blum tertebak :* ${anjuy.length - 1}`)
+                    var anug = anjuy.indexOf(i)
+                    anjuy.splice(anug, 1)
+                }
+            }
+            if (anjuy.length < 1){
+                let list = []
+                let kuispref = [`family100`,`tebakgambar`]
+                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
+                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
+                let startnum = 0 ; let startnumm = 0
+                    for (let x of kuispref) {
+                        const yyyy = {
+                        title: `${kuistitle[startnum++]}`,
+                        description: `${kuisdesk[startnumm++]}`,
+                        rowId: `${prefix}${x}`
+                      }
+                        list.push(yyyy)
+                    }
+                xinz.sendListMsg(from, `Family Game`, `Semua jawaban sudah tertebak\nKirim *${prefix}family100* untuk bermain lagi`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null)
+                family100.splice(game.getfamposi(from, family100), 1)
+            }
+        }
         if (game.isTebakBendera(from, tebakbendera) && isUser){
             if (chats.toLowerCase().includes(game.getJawabanTB(from, tebakbendera))){
                 var htgmkq = randomNomor(100)
@@ -525,35 +554,6 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 addBalance(sender, htgmkt, balance)
                 await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanMK(from, mathkuis)}\n*Hadiah :* $${htgmkt}\n\nIngin bermain lagi? kirim *${prefix}mathkuis*`)
                 mathkuis.splice(game.getMKPosi(from, mathkuis), 1)
-            }
-        }
-        if (game.isfam(from, family100) && isUser){
-            var anjuy = game.getjawaban100(from, family100)
-            for (let i of anjuy){
-                if (chats.toLowerCase().includes(i)){
-                    var htgmi = Math.floor(Math.random() * 20) + 1
-                    addBalance(sender, htgmi, balance)
-                    await reply(`*Jawaban benar*\n*Jawaban :* ${i}\n*Hadiah :* $${htgmi}\n*Jawaban yang blum tertebak :* ${anjuy.length - 1}`)
-                    var anug = anjuy.indexOf(i)
-                    anjuy.splice(anug, 1)
-                }
-            }
-            if (anjuy.length < 1){
-                let list = []
-                let kuispref = [`family100`,`tebakgambar`]
-                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
-                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
-                let startnum = 0 ; let startnumm = 0
-                    for (let x of kuispref) {
-                        const yyyy = {
-                        title: `${kuistitle[startnum++]}`,
-                        description: `${kuisdesk[startnumm++]}`,
-                        rowId: `${prefix}${x}`
-                      }
-                        list.push(yyyy)
-                    }
-                xinz.sendListMsg(from, `Family Game`, `Semua jawaban sudah tertebak\nKirim *${prefix}family100* untuk bermain lagi`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null)
-                family100.splice(game.getfamposi(from, family100), 1)
             }
         }
         // Premium

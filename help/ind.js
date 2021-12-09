@@ -385,10 +385,10 @@ usage: *${prefix}stickername text*
 18. ${prefix}ttp
 usage: *${prefix}ttp text*
 
-. ${prefix}findsticker
+19. ${prefix}findsticker
 Usage: *${prefix}findsticker judul*
 
-. ${prefix}stickerp
+20. ${prefix}stickerp
 Usage: *${prefix}stickerp*
     `
 }
@@ -571,16 +571,16 @@ Usage: *${prefix}blackpink text*
 23. ${prefix}neon
 Usage: *${prefix}neon text*
 
-. ${prefix}foliokanan
+24. ${prefix}foliokanan
 Usage: *${prefix}foliokanan text*
 
-. ${prefix}foliokiri
+25. ${prefix}foliokiri
 Usage: *${prefix}folio kiri*
 
-. ${prefix}nuliskanan
+26. ${prefix}nuliskanan
 Usage: *${prefix}nuliskanan text*
 
-. ${prefix}nuliskiri
+27. ${prefix}nuliskiri
 Usage: *${prefix}nuliskiri text*
     `
 }

@@ -454,37 +454,28 @@ usage: *-*
 6. ${prefix}family100
 usage: *-*
 
-7. ${prefix}siapaaku
+7. ${prefix}asupan
 usage: *-*
 
-8. ${prefix}tebakbendera
+8. ${prefix}joke
 usage: *-*
 
-9. ${prefix}tebaklirik
+9. ${prefix}meme
 usage: *-*
 
-10. ${prefix}asupan
-usage: *-*
-
-11. ${prefix}joke
-usage: *-*
-
-12. ${prefix}meme
-usage: *-*
-
-13. ${prefix}wpsearch
+10. ${prefix}wpsearch
 usage: *${prefix}wpsearch judul*
 
-14. ${prefix}subreddit
+10. ${prefix}subreddit
 usage: *${prefix}subreddit query*
 
-15. ${prefix}fuckmylife
+11. ${prefix}fuckmylife
 usage: *-*
 
-16. ${prefix}memeindo
+12. ${prefix}memeindo
 usage: *-*
 
-18. ${prefix}darkjoke
+13. ${prefix}darkjoke
 usage: *-*
     `
 }

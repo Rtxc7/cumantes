@@ -432,55 +432,52 @@ exports.menuFun = (prefix) => {
     return `
 *── 「 FUN FEATURE 」 ──*
 
-1. ${prefix}suit*
+1. ${prefix}suit
 usage: *${prefix}suit batu/gunting/kertas*
 
-2. ${prefix}slot*
+2. ${prefix}slot
 usage: *-*
 
-3. ${prefix}tictactoe*
+3. ${prefix}tictactoe
 usage: *${prefix}tictactoe @tag*
 
-4. ${prefix}dadu*
+4. ${prefix}dadu
 usage: *${prefix}dadu 1/6*
 
-5. ${prefix}tebakgambar*
+5. ${prefix}tebakgambar
 usage: *-*
 
-6. ${prefix}family100*
+6. ${prefix}family100
 usage: *-*
 
-7. ${prefix}siapaaku*
+7. ${prefix}siapaaku
 usage: *-*
 
-8. ${prefix}mathkuis*
+8. ${prefix}tebakbendera
 usage: *-*
 
-9. ${prefix}tebakbendera*
+9. ${prefix}tebaklirik
 usage: *-*
 
-10. ${prefix}tebaklirik*
+10. ${prefix}asupan
 usage: *-*
 
-11. ${prefix}asupan
+11. ${prefix}joke
 usage: *-*
 
-12. ${prefix}joke
+12. ${prefix}meme
 usage: *-*
 
-13. ${prefix}meme
-usage: *-*
-
-14. ${prefix}wpsearch
+13. ${prefix}wpsearch
 usage: *${prefix}wpsearch judul*
 
-15. ${prefix}subreddit
+14. ${prefix}subreddit
 usage: *${prefix}subreddit query*
 
-16. ${prefix}fuckmylife
+15. ${prefix}fuckmylife
 usage: *-*
 
-17. ${prefix}memeindo
+16. ${prefix}memeindo
 usage: *-*
 
 18. ${prefix}darkjoke
@@ -519,13 +516,13 @@ exports.menuKerang = (prefix) => {
     return `
 *── 「 KERANG 」 ──*
 
-1. ${prefix}kapankah*
+1. ${prefix}kapankah
 Usage: *${prefix}kapankah* text
 
-2. ${prefix}bisakah*
+2. ${prefix}bisakah
 Usage: *${prefix}bisakah* text
 
-3. ${prefix}rate*
+3. ${prefix}rate
 Usage: *${prefix}rate* pertanyaan
 
     `
@@ -689,43 +686,43 @@ exports.menuOwner = (prefix) => {
     return `
 *── 「 OWNER MENU 」 ──*
 
-1. ${prefix}premium*
+1. ${prefix}premium
 usage: *${prefix}premium add/del*
 
-2. ${prefix}lreset*
+2. ${prefix}lreset
 usage: *-*
 
-3. ${prefix}ban*
+3. ${prefix}ban
 usage: *${prefix}ban add/del*
 
-4. ${prefix}listban*
+4. ${prefix}listban
 usage: *-*
 
-5. ${prefix}clearall*
+5. ${prefix}clearall
 usage: *-*
 
-6. ${prefix}public*
+6. ${prefix}public
 usage: *-*
 
-7. ${prefix}self*
+7. ${prefix}self
 usage: *-*
 
-8. ${prefix}shutdown*
+8. ${prefix}shutdown
 usage: *-*
 
-9. ${prefix}setprefix*
+9. ${prefix}setprefix
 usage: *${prefix}setprefix multi/nopref*
 
-10. ${prefix}setname*
+10. ${prefix}setname
 usage: *${prefix}setname text*
 
-11. ${prefix}give*
+11. ${prefix}give
 usage: *${prefix}give @tag/nomor jumlah_xp*
 
-12. ${prefix}setstat*
+12. ${prefix}setstat
 usage: *${prefix}setstat text*
 
-13. ${prefix}bc*
+13. ${prefix}bc
 usage: *${prefix}bc text*
 
 14. ${prefix}exif
@@ -767,16 +764,16 @@ exports.menuPrimbon = (prefix) => {
     return `
 *── 「 PRIMBON MENU 」 ──*
 
-1. ${prefix}artinama*
+1. ${prefix}artinama
 usage: *${prefix}artinama text*
 
-2. ${prefix}artimimpi*
+2. ${prefix}artimimpi
 usage: *${prefix}artimimpi text*
 
-3. ${prefix}pasangan*
+3. ${prefix}pasangan
 usage: *${prefix}pasangan text*
 
-4. ${prefix}ramaljadian*
+4. ${prefix}ramaljadian
 usage: *-*
     `
 }
@@ -785,28 +782,28 @@ exports.menuPray = (prefix) => {
     return `
 *── 「 PRAY 」 ──*
 
-1. ${prefix}hadis*
+1. ${prefix}hadis
 Usage: *${prefix}hadis query*
 
-2. ${prefix}jadwalsholat*
+2. ${prefix}jadwalsholat
 Usage: *${prefix}jadwalsholat kota*
 
-3. ${prefix}kisahnabi*
+3. ${prefix}kisahnabi
 Usage: *${prefix}kisahnabi query*
 
-4. ${prefix}alquran*
+4. ${prefix}alquran
 Usage: *${prefix}alquran query*
 
-5. ${prefix}surah*
+5. ${prefix}surah
 usage: *${prefix}surah query*
 
-6. ${prefix}asmaulhusna*
+6. ${prefix}asmaulhusna
 usage: *-*
 
-7. ${prefix}quranaudio*
+7. ${prefix}quranaudio
 usage: *${prefix}quranaudio query*
 
-8. ${prefix}listsurah*
+8. ${prefix}listsurah
 usage: *-*
 
 9. ${prefix}randomquran*
@@ -818,40 +815,40 @@ exports.menuMisc = (prefix) => {
     return `
 *── 「 MEDIA AND MISC 」 ──*
 
-1. ${prefix}tolink*
+1. ${prefix}tolink
 usage: *${prefix}tolink reply image*
 
-2. ${prefix}cuaca*
+2. ${prefix}cuaca
 usage: *${prefix}cuaca query*
 
 3. ${prefix}jadwalbola*
 usage: *-*
 
-5. ${prefix}berita*
+5. ${prefix}berita
 usage: *${prefix}*
 
-6. ${prefix}corona*
+6. ${prefix}corona
 usage: *-*
 
-7. ${prefix}jadwaltv*
+7. ${prefix}jadwaltv
 usage: *-*
 
-8. ${prefix}movie*
+8. ${prefix}movie
 usage: *${prefix}movie query*
 
-9. ${prefix}kalkulator*
+9. ${prefix}kalkulator
 usage: *${prefix}kalkulator 1+1*
 
-10. ${prefix}jarak*
+10. ${prefix}jarak
 usage: *${prefix}jarak query*
 
-11. ${prefix}hoax*
+11. ${prefix}hoax
 usage: *-*
 
-12. ${prefix}mutual*
+12. ${prefix}mutual
 usage: *-*
 
-13. ${prefix}resepmasakan*
+13. ${prefix}resepmasakan
 usage: *${prefix}resepmasakan query*
 
 14. ${prefix}resep*
@@ -932,7 +929,7 @@ exports.menuPrice = (owner, pushname) => {
     return `
 *── 「 PRICE LIST 」 ──*
  
-*Hai kak  ${pushname}*
+*Hai kak  *${pushname}*
 *Harga Sewa Bot*
 *15K/Group Selama 1 Bulan*
 

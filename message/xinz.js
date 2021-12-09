@@ -4075,9 +4075,8 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                 .then((res) => {
                     let yt = res.videos
                         let list = []
-                        let startnum = 1
-                        for (var x of yt) {
-                        let yy = { title: 'Data ke-'+ startnum++,
+                for ( let x of yt){
+                    let yy = { title: `${x.title}`,
                         rows: [
                            {
                             title: `${x.title}`,
@@ -4087,8 +4086,8 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         ]
                         }
                         list.push(yy)
-                    }
-                    xinz.sendListMsg(from, `Music Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
+                }
+                xinz.sendListMsg(from, `List Music`, `Hasil Pencarian Music "${q}"`, `Pilihlah Music  Anda`,`Pilih Disini`, `Pilih Untuk MoreInfo`, list, msg)
                 })
                 .catch((err) => {
                     xinz.sendMess(ownerNumber[0], 'PlayMp3 Error : ' + err)
@@ -4686,7 +4685,7 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                 case prefix+'slot':
                     if (isGroup && !isLevelingOn) return reply(ind.levelingNotOn())
                 if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                    const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : ?? : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
+                    const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : ?? : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : ??','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
                     const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	

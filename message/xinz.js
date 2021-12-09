@@ -638,7 +638,42 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                         })
             }
                 break
-             case prefix+'menu': case prefix+'help':{
+                case prefix+'menu': case prefix+'help':{
+                	try {
+                        var pic = await xinz.getProfilePicture(sender)
+                    } catch {
+                        var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+                    }
+                let qqppp = [{
+                    "buttonId": `${prefix}allmenu`,
+                    "buttonText": {
+                        "displayText": "COMMAND"
+                    },
+                    "type": "RESPONSE"
+                },{
+                    "buttonId": `${prefix}rules`,
+                    "buttonText": {
+                        "displayText": "RULES"
+                    },
+                    "type": "RESPONSE"
+                },
+{
+                    "buttonId": `${prefix}donasi`,
+                    "buttonText": {
+                        "displayText": "DONASI"
+                    },
+                    "type": "RESPONSE"
+                }
+]
+                xinz.sendButtonsLoc(from, `Hai Kak @${sender.split('@')[0]}\n\nSaya Felix, Bot WhatsApp yg membantu kamu untuk mempermudah sesuatu seperti Membuat Sticker dan Lainnya, Ada Butuh Info Dariku?`, `Note: Kalo kamu pakai wa lama atau mod, dan button ga keliatan, langsung aja ketik ${prefix}allmenu`, qqppp, await getBuffer(pic), [sender])
+                }
+                break
+             case prefix+'allmenu': case prefix+'menuall':{
+             	                    try {
+                        var pic = await xinz.getProfilePicture(sender)
+                    } catch {
+                        var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+                    }
                     const jumlahCommand = require('util').inspect(hit.all)
                     const jumlahHarian = require('util').inspect(hit.today)
                     const jumlahUser = pendaftar.length
@@ -649,13 +684,13 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                     const Limitnya = isPremium ? `UNLIMITED*\n*Expire : ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).days} day(s) ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).hours} hour(s) ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).minutes} minute(s)` : `${getLimit(sender, limitCount, limit)}`
                     var b = xinz.mode
                     let qqppp = [{
-                    "buttonId": `${prefix}sewabot`,
+                    "buttonId": `${prefix}sc`,
                     "buttonText": {
-                        "displayText": "SEWABOT"
+                        "displayText": "SCRIPT BOT"
                     },
                     "type": "RESPONSE"
                     }]
-                    xinz.sendButtonsLoc(from, ind.menu(prefix, ucap, pushname, jumlahUser, runtime(process.uptime()), ownerNumber[0].split("@")[0], jumlahHarian, jumlahCommand, sender, time, `*${b.toUpperCase()}*`, levelMenu, xpMenu, reqXp, uangku, role, Limitnya), `Pilih menu dibawah!`, qqppp, fs.readFileSync(setting.pathImg), [sender, "0@s.whatsapp.net"]).then((res) =>{
+                    xinz.sendButtonsLoc(from, ind.menu(prefix, ucap, pushname, jumlahUser, runtime(process.uptime()), ownerNumber[0].split("@")[0], jumlahHarian, jumlahCommand, sender, time, `*${b.toUpperCase()}*`, levelMenu, xpMenu, reqXp, uangku, role, Limitnya), `Pilih menu dibawah!`, qqppp, await getBuffer(pic), [sender, "0@s.whatsapp.net"]).then((res) =>{
                     let list = []
                     let listmenu = [`groupmenu`,`menupremi`,`imagemaker`,`kerangmenu`,`praymenu`,`ownermenu`,`funmenu`,`mediamenu`,`weebsmenu`,`downloader`,`stickermenu`,`primbonmenu`,`levelingmenu`,`about`,`18`,`owner`,`sewabot`]
                     let listmenuu = [`Menu Group`,`Premium Menu`,`Image Effect`,`Kerang Menu`,`PrayMenu`,`Owner Command`,`Fun Features`,`Misc and Media`,`Weebs Zone`,`Downloader`,`Sticker Editing`,`Primbon`,`Leveling Xp and Balance`,`About Bot`,`Nsfw Command`,`OwnerBot`,`Rent this Bot`]

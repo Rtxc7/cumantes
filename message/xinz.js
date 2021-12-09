@@ -38,7 +38,6 @@ const FormData = require('form-data');
 const getMime = require('file-type');
 const gis = require('g-i-s');
 const google = require('google-it');
-const yts = require("yt-search");
 const WSF = require('wa-sticker-formatter')
 const petpet = require('pet-pet-gif')
 const Nekos = require('nekos.life');

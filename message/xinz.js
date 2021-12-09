@@ -638,24 +638,7 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                         })
             }
                 break
-            case prefix+'menu': case prefix+'help':{
-                let qqppp = [{
-                    "buttonId": `${prefix}menuall`,
-                    "buttonText": {
-                        "displayText": "COMMAND"
-                    },
-                    "type": "RESPONSE"
-                },{
-                    "buttonId": `${prefix}rules`,
-                    "buttonText": {
-                        "displayText": "RULES"
-                    },
-                    "type": "RESPONSE"
-                }]
-                xinz.sendButtonsLoc(from, `Hai Kak @${sender.split('@')[0]}\n\nSaya Felix, Bot WhatsApp yg membantu kamu untuk mempermudah sesuatu seperti Membuat Sticker dan Lainnya, Ada Butuh Info Dariku?`, `Note: Kalo kamu pakai wa lama atau mod, dan button ga keliatan, langsung aja ketik ${prefix}allmenu`, qqppp, fs.readFileSync(setting.pathImg), [sender])
-                }
-                break
-             case prefix+'allmenu': case prefix+'menuall':{
+             case prefix+'menu': case prefix+'help':{
                     try {
                         var pic = await xinz.getProfilePicture(sender)
                     } catch {
@@ -680,8 +663,8 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                     xinz.sendButtonsLoc(from, ind.menu(prefix, ucap, pushname, jumlahUser, runtime(process.uptime()), ownerNumber[0].split("@")[0], jumlahHarian, jumlahCommand, sender, time, `*${b.toUpperCase()}*`, levelMenu, xpMenu, reqXp, uangku, role, Limitnya), `Pilih menu dibawah!`, qqppp, await getBuffer(pic), [sender, "0@s.whatsapp.net"]).then((res) =>{
                     let list = []
                     let listmenu = [`groupmenu`,`menupremi`,`textmenu`,`imagemaker`,`kerangmenu`,`praymenu`,`ownermenu`,`funmenu`,`mediamenu`,`weebsmenu`,`downloader`,`stickermenu`,`primbonmenu`,`levelingmenu`,`about`,`18`,`owner`,`sewabot`]
-                    let listmenuu = [`Menu Group`,`Premium Menu`,`TextMaker`,`Image Effect`,`Kerang Menu`,`PrayMenu`,`Owner Command`,`Fun Features`,`Misc and Media`,`Weebs Zone`,`Downloader`,`Sticker Editing`,`Primbon`,`Leveling Xp and Balance`,`About Bot`,`Nsfw Command`,`OwnerBot`,`Rent this Bot`]
-                    let listmenuuu = [`List Fitur Khusus Admin-Group`,`Hanya bisa dipakai oleh User-Premium`,`List Menu TextMaker`,`Edit Gambarmu menjadi efek yang keren`,`Random Jawaban bot kaka, masa ga tau, ga pernah nonton Spongebob ya?`, `Fitur keagamaan, harap Jangan diPermainkan, ayo kita tingkatkan toleransi 😍😍`,`Ini Cuman Untuk Ownerku`,`Fitur bot yg bisa dipake buat happy-an`,`Butuh Info atau Media, Klik disini`,`Zona Wibu-Only, BaKaa >/\/\<`,`Ingin download Sesuatu?`,`Bikin Sticker dan lainnya kaka`,`Ramalan Primbon buat kamu yg percaya ramalan xixi`,`Tingkatkan xp mu ya beb🥰🥰`,`Fitur ini menampilkan command" lengkap tentang bot`,`Only for 18+ madafaka`,`Kalo mau tau Ownerku, bisa klik ini kok`,`Mau sewaBot kak? info lebih lanjut, Klik ini`]
+                    let listmenuu = [`Menu Group`,`Premium Menu`,`Image Effect`,`Kerang Menu`,`PrayMenu`,`Owner Command`,`Fun Features`,`Misc and Media`,`Weebs Zone`,`Downloader`,`Sticker Editing`,`Primbon`,`Leveling Xp and Balance`,`About Bot`,`Nsfw Command`,`OwnerBot`,`Rent this Bot`]
+                    let listmenuuu = [`List Fitur Khusus Admin-Group`,`Hanya bisa dipakai oleh User-Premium`,`Edit Gambarmu menjadi efek yang keren`,`Random Jawaban bot kaka, masa ga tau, ga pernah nonton Spongebob ya?`, `Fitur keagamaan, harap Jangan diPermainkan, ayo kita tingkatkan toleransi 😍😍`,`Ini Cuman Untuk Ownerku`,`Fitur bot yg bisa dipake buat happy-an`,`Butuh Info atau Media, Klik disini`,`Zona Wibu-Only, BaKaa >/\/\<`,`Ingin download Sesuatu?`,`Bikin Sticker dan lainnya kaka`,`Ramalan Primbon buat kamu yg percaya ramalan xixi`,`Tingkatkan xp mu ya beb🥰🥰`,`Fitur ini menampilkan command" lengkap tentang bot`,`Only for 18+ madafaka`,`Kalo mau tau Ownerku, bisa klik ini kok`,`Mau sewaBot kak? info lebih lanjut, Klik ini`]
                     let nombor = 1
                     let startnum = 0
                     let startnumm = 0

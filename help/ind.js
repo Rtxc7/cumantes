@@ -247,31 +247,25 @@ usage: *${prefix}playmp3 judul*
 10. ${prefix}igstory
 usage: *${prefix}igstory query*
 
-11. ${prefix}hintt
-usage: *${prefix}hintt text*
-
-12. ${prefix}sendfile
-usage: *${prefix}sendfile name*
-
-13. ${prefix}cocofun
+11. ${prefix}cocofun
 usage: *${prefix}cocofun link*
 
-14. ${prefix}smule
+12. ${prefix}smule
 usage: *${prefix}smule link*
 
-15. ${prefix}instagram
+13. ${prefix}instagram
 usage: *${prefix}instagram link*
 
-16. ${prefix}facebook
+14. ${prefix}facebook
 usage: *${prefix}facebook link*
 
-17. ${prefix}ytsearch
+15. ${prefix}ytsearch
 usage: *${prefix}ytsearch judul*
 
-18. ${prefix}igstalk
+16. ${prefix}igstalk
 usage: *${prefix}igstalk username*
 
-19. ${prefix}ghstalk
+17. ${prefix}ghstalk
 usage: *${prefix}ghstalk username*
     `
 }
@@ -487,13 +481,10 @@ usage: *${prefix}wpsearch judul*
 10. ${prefix}subreddit
 usage: *${prefix}subreddit query*
 
-11. ${prefix}fuckmylife
+11. ${prefix}memeindo
 usage: *-*
 
-12. ${prefix}memeindo
-usage: *-*
-
-13. ${prefix}darkjoke
+12. ${prefix}darkjoke
 usage: *-*
     `
 }
@@ -738,6 +729,9 @@ usage: *${prefix}nsfw enable/disable*
 
 36. ${prefix}leveling
 usage: *${prefix}leveling enable/disable*
+
+37. ${prefix}antivirtex
+usage: *${prefix}antivirtex enable/disable*
    `
 }
 

@@ -485,27 +485,6 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 tebakgambar.splice(game.getTGPosi(from, tebakgambar), 1)
             }
         }
-            if (game.isMathKuis(from, mathkuis) && isUser){
-            if (chats.toLowerCase().includes(game.getJawabanMK(from, mathkuis))){
-                var htgm = randomNomor(100)
-                addBalance(sender, htgm, balance)
-                let list = []
-                let kuispref = [`family100`,`tebakgambar`]
-                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
-                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
-                let startnum = 0 ; let startnumm = 0
-                    for (let x of kuispref) {
-                        const yyyy = {
-                        title: `${kuistitle[startnum++]}`,
-                        description: `${kuisdesk[startnumm++]}`,
-                        rowId: `${prefix}${x}`
-                      }
-                        list.push(yyyy)
-                    }
-                xinz.sendListMsg(from, `Selamat @${sender.split('@')[0]}`, `*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanMK(from, mathkuis)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}mathkuis*`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null, [sender])
-                mathkuis.splice(game.getMKPosi(from, mathkuis), 1)
-            }
-        }
         if (game.isfam(from, family100) && isUser){
             var anjuy = game.getjawaban100(from, family100)
             for (let i of anjuy){
@@ -4079,7 +4058,7 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         }
                         list.push(yy)
                     }
-                    listmsg(from, `Video Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
+                   xinz.sendListMsg(from, `Video Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
                 })
                 .catch((err) => {
                     sendMess(ownerNumber, 'YT SEARCH Error : ' + err)
@@ -4109,11 +4088,11 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         }
                         list.push(yy)
                     }
-                    listmsg(from, `Music Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
+                    xinz.sendListMsg(from, `Music Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
                 })
                 .catch((err) => {
-                    sendMess(ownerNumber, 'YT SEARCH Error : ' + err)
-                    console.log(color('[YT SEARCH]', 'red'), err)
+                    xinz.sendMess(ownerNumber[0], 'PlayMp3 Error : ' + err)
+                    console.log(color('[PlayMp3]', 'red'), err)
                     reply(mess.error.api)
                 })
             }
@@ -4707,7 +4686,7 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                 case prefix+'slot':
                     if (isGroup && !isLevelingOn) return reply(ind.levelingNotOn())
                 if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                    const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : 🔔 : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
+                    const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : ?? : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
                     const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
@@ -4757,58 +4736,6 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                 let be = await xinz.prepareMessage(from, await getBuffer(anu.result.image), image)
                 let qweriio = be.message["ephemeralMessage"] ? be.message.ephemeralMessage : be
                 xinz.sendButtons(from, `Tebak Gambar`, monospace(`Silahkan jawab soal berikut ini\n\nWaktu : ${gamewaktu}s`), `Klik dibawah untuk petunjuk`, [{"buttonId": `${prefix}hinttt ${petunjuk}`,"buttonText": {"displayText": "HINT"},"type": "RESPONSE"}], true, null, null, qweriio.message.imageMessage)
-                gameAdd(sender, glimit)
-            }
-                break
-                case prefix+'tebaklirik':{
-                if (!isGroup)return reply(mess.OnlyGrup)
-                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                if (game.isTebakLirik(from, tebaklirik)) return reply(`Masih ada soal yang belum di selesaikan`)
-                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/lirik?apikey=${lolkey}`)
-                let anih = anu.result.answer.toLowerCase()
-                game.addtebaklirik(from, anih, gamewaktu, tebaklirik)
-                const petunjuk = anu.result.answer.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
-                textImg(monospace(`${anu.result.question}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
-                gameAdd(sender, glimit)
-            }
-                break
-            case prefix+'mathkuis':{
-                if (!isGroup)return reply(mess.OnlyGrup)
-                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                if (game.isMathKuis(from, mathkuis)) return reply(`Masih ada soal yang belum di selesaikan`)
-                var angka1 = Math.ceil(Math.random() * 1000)
-                var angka2 = Math.ceil(Math.random() * 1000)
-                var format = ['/','*','+','-']
-                var rendom = format[Math.floor(Math.random() * format.length)]
-                var soal = angka1 + rendom + angka2
-                let anih = `${mathjs.evaluate(soal)}`
-                game.addmathkuis(from, anih, gamewaktu, mathkuis)
-                const petunjuk = anih.replace(/[1|3|5|7|9]/gi, '_')
-                textImg(monospace(`${angka1} ${rendom.replace('/', ':').replace('*', '×')} ${angka2}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
-                gameAdd(sender, glimit)
-            }
-                break
-                case prefix+'siapaaku':{
-                if (!isGroup)return reply(mess.OnlyGrup)
-                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                if (game.isSiapaAku(from, siapaaku)) return reply(`Masih ada soal yang belum di selesaikan`)
-                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/siapaaku?apikey=${lolkey}`)
-                let anih = anu.result.answer.toLowerCase()
-                game.addsiapaaku(from, anih, gamewaktu, siapaaku)
-                const petunjuk = anu.result.answer.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
-                textImg(monospace(`${anu.result.question}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
-                gameAdd(sender, glimit)
-            }
-                break
-            case prefix+'tebakbendera':{
-                if (!isGroup)return reply(mess.OnlyGrup)
-                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                if (game.isTebakBendera(from, tebakbendera)) return reply(`Masih ada soal yang belum di selesaikan`)
-                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/bendera?apikey=${lolkey}`)
-                let anih = anu.result.name.toLowerCase()
-                game.addkuis(from, anih, gamewaktu, tebakbendera)
-                const petunjuk = anu.result.name.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
-                textImg(monospace(`Nama Negara Dari Simbol ${anu.result.flag}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
                 gameAdd(sender, glimit)
             }
                 break

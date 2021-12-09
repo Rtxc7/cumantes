@@ -4037,65 +4037,6 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                     reply(mess.error.api)
                 }
                 break
-                            case prefix+'video': case prefix+'videos': case prefix+'vidio': case prefix+'vidios':{
-                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length === 1) return reply(`Kirim perintah *${command} query*`)
-                reply(mess.wait)
-                yts(q)
-                .then((res) => {
-                    let yt = res.videos
-                        let list = []
-                        let startnum = 1
-                        for (var x of yt) {
-                        let yy = { title: 'Data ke-'+ startnum++,
-                        rows: [
-                           {
-                            title: `${x.title}`,
-                            description: `\n\n*Viewers: ${x.views}*\n*Duration: ${x.timestamp}*\n*Upload: ${x.ago}*\n*Url: ${x.url}*`,
-                            rowId: `${prefix}ytmp4 ${x.url}`
-                          }
-                        ]
-                        }
-                        list.push(yy)
-                    }
-                   xinz.sendListMsg(from, `Video Search`, `Pilih disini, Hasil Pencarian "${q}", Hanya untuk Premium User`, list)
-                })
-                .catch((err) => {
-                    xinz.sendMess(ownerNumber[0], 'PlayMp3 Error : ' + err)
-                    console.log(color('[PlayMp3]', 'red'), err)
-                    reply(mess.error.api)
-                })
-            }
-                break
-            case prefix+'music': case prefix+'musik':{
-                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length === 1) return reply(`Kirim perintah *${command} query*`)
-                reply(mess.wait)
-                yts(q)
-                .then((res) => {
-                    let yt = res.videos
-                        let list = []
-                for ( let x of yt){
-                    let yy = { title: `${x.title}`,
-                        rows: [
-                           {
-                            title: `${x.title}`,
-                            description: `\n\n*Viewers: ${x.views}*\n*Duration: ${x.timestamp}*\n*Upload: ${x.ago}*\n*Url: ${x.url}*`,
-                            rowId: `${prefix}ytmp3 ${x.url}`
-                          }
-                        ]
-                        }
-                        list.push(yy)
-                }
-                xinz.sendListMsg(from, `List Music`, `Hasil Pencarian Music "${q}"`, `Pilihlah Music  Anda`,`Pilih Disini`, `Pilih Untuk MoreInfo`, list, msg)
-                })
-                .catch((err) => {
-                    xinz.sendMess(ownerNumber[0], 'PlayMp3 Error : ' + err)
-                    console.log(color('[PlayMp3]', 'red'), err)
-                    reply(mess.error.api)
-                })
-            }
-                break
             case prefix+'playmp3':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length === 1) return reply(`Kirim perintah *${prefix}play query*`)
@@ -4685,7 +4626,7 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                 case prefix+'slot':
                     if (isGroup && !isLevelingOn) return reply(ind.levelingNotOn())
                 if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                    const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : ?? : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : ??','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
+                    const sotoy = ['🍊 : 🍒 : 🍐','🍒 : 🔔 : 🍊','🍇 : 🍒 : 🍐','🍊 : 🍋 : 🔔','🔔 : 🍒 : 🍐','🔔 : 🍒 : 🍊','🍊 : 🍋 : 🔔','🍐 : 🍒 : 🍋','🍐 : 🍐 : 🍐','🍊 : 🍒 : 🍒','🔔 : ?? : 🍇','🍌 : 🍒 : 🔔','🍐 : 🔔 : 🔔','🍊 : 🍋 : 🍒','🍋 : 🍋 : 🍌','🔔 : 🔔 : 🍇','🔔 : 🍐 : 🍇','🔔 : 🔔 : 🔔','🍒 : 🍒 : 🍒','🍌 : 🍌 : 🍌','🍇 : 🍇 : 🍇']
                     const somtoy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	
                     const somtoyyy = sotoy[Math.floor(Math.random() * (sotoy.length))]	

@@ -52,6 +52,7 @@ const afk = require("../lib/afk");
 const { ind } = require('../help/')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require("../lib/banned");
 const { isTicTacToe, getPosTic } = require("../lib/tictactoe");
+const tictac = require("../lib/tictac");
 const { yta, ytv } = require("../lib/ytdl");
 const { getUser, getPost, searchUser } = require('../lib/instagram');
 const { fbdl } = require("../lib/fbdl");
@@ -495,6 +496,27 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 tebakgambar.splice(game.getTGPosi(from, tebakgambar), 1)
             }
         }
+            if (game.isMathKuis(from, mathkuis) && isUser){
+            if (chats.toLowerCase().includes(game.getJawabanMK(from, mathkuis))){
+                var htgm = randomNomor(100)
+                addBalance(sender, htgm, balance)
+                let list = []
+                let kuispref = [`family100`,`tebakgambar`]
+                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
+                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
+                let startnum = 0 ; let startnumm = 0
+                    for (let x of kuispref) {
+                        const yyyy = {
+                        title: `${kuistitle[startnum++]}`,
+                        description: `${kuisdesk[startnumm++]}`,
+                        rowId: `${prefix}${x}`
+                      }
+                        list.push(yyyy)
+                    }
+                xinz.sendListMsg(from, `Selamat @${sender.split('@')[0]}`, `*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanMK(from, mathkuis)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}mathkuis*`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null, [sender])
+                mathkuis.splice(game.getMKPosi(from, mathkuis), 1)
+            }
+        }
         if (game.isfam(from, family100) && isUser){
             var anjuy = game.getjawaban100(from, family100)
             for (let i of anjuy){
@@ -524,38 +546,8 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 family100.splice(game.getfamposi(from, family100), 1)
             }
         }
-        if (game.isTebakBendera(from, tebakbendera) && isUser){
-            if (chats.toLowerCase().includes(game.getJawabanTB(from, tebakbendera))){
-                var htgmkq = randomNomor(100)
-                addBalance(sender, htgmkq, balance)
-                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTB(from, tebakbendera)}\n*Hadiah :* $${htgmkq}\n\nIngin bermain lagi? kirim *${prefix}tebakbendera*`)
-                tebakbendera.splice(game.getTBPosi(from, tebakbendera), 1)
-            }
-        }
-        if (game.isTebakLirik(from, tebaklirik) && isUser){
-            if (chats.toLowerCase().includes(game.getJawabanTL(from, tebaklirik))){
-                var htgmkw = randomNomor(100)
-                addBalance(sender, htgmkw, balance)
-                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTL(from, tebaklirik)}\n*Hadiah :* $${htgmkw}\n\nIngin bermain lagi? kirim *${prefix}tebaklirik*`)
-                tebaklirik.splice(game.getTLPosi(from, tebaklirik), 1)
-            }
-        }
-        if (game.isSiapaAku(from, siapaaku) && isUser){
-            if (chats.toLowerCase().includes(game.getJawabanSA(from, siapaaku))){
-                var htgmke = randomNomor(100)
-                addBalance(sender, htgmke, balance)
-                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanSA(from, siapaaku)}\n*Hadiah :* $${htgmke}\n\nIngin bermain lagi? kirim *${prefix}siapaaku*`)
-                siapaaku.splice(game.getSAPosi(from, siapaaaku), 1)
-            }
-        }
-        if (game.isMathKuis(from, mathkuis) && isUser){
-            if (chats.toLowerCase().includes(game.getJawabanMK(from, mathkuis))){
-                var htgmkt = randomNomor(100)
-                addBalance(sender, htgmkt, balance)
-                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanMK(from, mathkuis)}\n*Hadiah :* $${htgmkt}\n\nIngin bermain lagi? kirim *${prefix}mathkuis*`)
-                mathkuis.splice(game.getMKPosi(from, mathkuis), 1)
-            }
-        }
+
+
         // Premium
         _prem.expiredCheck(global.xinz, premium)
         // Sewa

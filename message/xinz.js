@@ -5196,7 +5196,7 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                     if (isAntiVirtex) return reply(`Udah aktif`)
                     antivirtex.push(from)
 					fs.writeFileSync('./database/antivirtex.json', JSON.stringify(antivirtex))
-					reply('Antilink grup aktif')
+					reply('Antivirtex grup aktif')
                 } else if (args[1].toLowerCase() === 'disable'){
                     let anu = antivirtex.indexOf(from)
                     antivirtex.splice(anu, 1)

@@ -177,7 +177,9 @@ exports.menu = (prefix, ucap, pushname2, jumlahUser, timebot, owner, jumlahHaria
 
 🚀 *Time: ${time}*
 💣 *Mode* :「 ${public} 」
-
+🗣 *Note*:
+Bot Ini Dalam Tahap Pengembangan
+Mohon Lapor Owner Jika Ada Fitur Yang Eror!
 
 
 ┌────❉ *USER INFO* ❉

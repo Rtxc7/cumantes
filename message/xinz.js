@@ -51,8 +51,6 @@ const _sewa = require("../lib/sewa");
 const afk = require("../lib/afk");
 const { ind } = require('../help/')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require("../lib/banned");
-const { isTicTacToe, getPosTic } = require("../lib/tictactoe");
-const tictac = require("../lib/tictac");
 const { yta, ytv } = require("../lib/ytdl");
 const { getUser, getPost, searchUser } = require('../lib/instagram');
 const { fbdl } = require("../lib/fbdl");
@@ -97,7 +95,7 @@ const bgbot = 'https://i.ibb.co/Rpdfnwh/images-q-tbn-ANd9-Gc-Tmn-q-Sq-E0m-Fr-QUE
 // Game
 let tebakgambar = [];
 let family100 = [];
-let tictactoe = [];
+let mathkuis = [];
 
 let { ownerNumber, limitCount, lolkey, zekskey, gamewaktu, tobzkey, aqulzkey } = setting
 moment.tz.setDefault("Asia/Jakarta").locale("id");
@@ -457,13 +455,12 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
             if (!isGroupAdmins && !isOwner) return
         }
         
-        // TicTacToe
-        if (isTicTacToe(from, tictactoe)) tictac(xinz, chats, prefix, tictactoe, from, sender, reply, mentions, addBalance, balance)
 
         
         // GAME 
         game.cekWaktuFam(xinz, family100)
         game.cekWaktuTG(xinz, tebakgambar)
+        game.cekWaktuMK(xinz, mathkuis)
         
 
         // GAME 
@@ -486,6 +483,27 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                     }
                 xinz.sendListMsg(from, `Selamat @${sender.split('@')[0]}`, `*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTG(from, tebakgambar)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}tebakgambar*`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null, [sender])
                 tebakgambar.splice(game.getTGPosi(from, tebakgambar), 1)
+            }
+        }
+            if (game.isMathKuis(from, mathkuis) && isUser){
+            if (chats.toLowerCase().includes(game.getJawabanMK(from, mathkuis))){
+                var htgm = randomNomor(100)
+                addBalance(sender, htgm, balance)
+                let list = []
+                let kuispref = [`family100`,`tebakgambar`]
+                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
+                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
+                let startnum = 0 ; let startnumm = 0
+                    for (let x of kuispref) {
+                        const yyyy = {
+                        title: `${kuistitle[startnum++]}`,
+                        description: `${kuisdesk[startnumm++]}`,
+                        rowId: `${prefix}${x}`
+                      }
+                        list.push(yyyy)
+                    }
+                xinz.sendListMsg(from, `Selamat @${sender.split('@')[0]}`, `*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanMK(from, mathkuis)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}mathkuis*`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null, [sender])
+                mathkuis.splice(game.getMKPosi(from, mathkuis), 1)
             }
         }
         if (game.isfam(from, family100) && isUser){
@@ -4714,35 +4732,6 @@ _Harap tunggu sebentar, media akan segera dikirim_`
 	     	        }
                     gameAdd(sender, glimit)
                     break
-                    case prefix+'tictactoe': case prefix+'ttt': case prefix+'ttc':
-                if (!isGroup)return reply(mess.OnlyGrup)
-                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
-                if (isTicTacToe(from, tictactoe)) return reply(`Masih ada game yg blum selesai`)
-                if (args.length < 2) return reply(`Kirim perintah *${prefix}tictactoe* @tag`)
-                if (mentioned.length !== 0){
-						if (mentioned[0] === sender) return reply(`Sad amat main ama diri sendiri`)
-                        let h = randomNomor(100)
-                        mentions(monospace(`@${sender.split('@')[0]} menantang @${mentioned[0].split('@')[0]} untuk bermain TicTacToe\n\nKirim (Y/T) untuk bermain\n\nHadiah : ${h} balance`), [sender, mentioned[0]], false)
-                        tictactoe.push({
-                            id: from,
-                            status: null,
-                            hadiah: h,
-                            penantang: sender,
-                            ditantang: mentioned[0],
-                            TicTacToe: ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣']
-                        })
-                        gameAdd(sender, glimit)
-                } else {
-                    reply(`Kirim perintah *${prefix}tictactoe* @tag`)
-                }
-                break
-            case prefix+'delttt':
-            case prefix+'delttc':
-                if (!isGroup)return reply(mess.OnlyGrup)
-                if (!isTicTacToe(from, tictactoe)) return reply(`Tidak ada sesi game tictactoe di grup ini`)
-                tictactoe.splice(getPosTic(from, tictactoe), 1)
-                reply(`Berhasil menghapus sesi tictactoe di grup ini`)
-                break
             case prefix+'dadu':
                 if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
                 if (args.length > 2) return reply(`Penggunaan ${command} angka atau ${command} (Jika mendapat angka 6 akan mendapatkan sejumlah balance)`)

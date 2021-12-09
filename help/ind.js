@@ -363,6 +363,33 @@ usage: *-*
 
 12. ${prefix}animesticker
 usage: *-*
+
+13. ${prefix}emoji
+usage: *${prefix}emoji 🗿*
+
+14. ${prefix}ttp2
+usage: *${prefix}ttp2 text*
+
+15. ${prefix}sfire
+usage: *${prefix}sfire send_image*
+
+16. ${prefix}attp
+usage: *${prefix}attp text*
+
+17. ${prefix}ttg
+usage: *${prefix}ttg text*
+
+18. ${prefix}stickermeme
+usage: *${prefix}stickername text*
+
+18. ${prefix}ttp
+usage: *${prefix}ttp text*
+
+. ${prefix}findsticker
+Usage: *${prefix}findsticker judul*
+
+. ${prefix}stickerp
+Usage: *${prefix}stickerp*
     `
 }
 
@@ -475,26 +502,86 @@ exports.menuImage = (prefix) => {
     return `
 *── 「 EFFECT AND MANIPULATION 」 ──*
 
-1. ${prefix}emoji
-usage: *${prefix}emoji 🗿*
+1. ${prefix}threshold
+Usage: *${prefix}threshold reply_image*
 
-2. ${prefix}ttp2
-usage: *${prefix}ttp2 text*
+2. ${prefix}sepia
+Usage: *${prefix}sepia reply_image*
 
-3. ${prefix}sfire
-usage: *${prefix}sfire send_image*
+3. ${prefix}brigthness
+Usage: *${prefix}brigthness reply_image*
 
-4. ${prefix}attp
-usage: *${prefix}attp text*
+4. ${prefix}invertgey
+Usage: *${prefix}invertgey reply_image*
 
-5. ${prefix}ttg
-usage: *${prefix}ttg text*
+5. ${prefix}invert
+Usage: *${prefix}invert reply_image*
 
-6. ${prefix}stickermeme
-usage: *${prefix}stickername text*
+6. ${prefix}greyscale
+Usage: *${prefix}greyscale reply_image*
 
-7. ${prefix}ttp
-usage: *${prefix}ttp text*
+7. ${prefix}glass
+Usage: *${prefix}glass reply_image*
+
+8. ${prefix}captcha
+Usage: *${prefix}captcha reply_image*
+
+9. ${prefix}blurpify
+Usage: *${prefix}blurpify reply_image*
+
+10. ${prefix}magic
+Usage: *${prefix}magic reply_image*
+
+11. ${prefix}deep
+Usage: *${prefix}deep reply_image*
+
+12. ${prefix}burik
+Usage: *${prefix}burik reply_image*
+
+13. ${prefix}threats
+Usage: *${prefix}threats reply_image*
+
+14. ${prefix}wasted
+Usage: *${prefix}wasted reply_image*
+
+15. ${prefix}fisheye
+Usage: *${prefix}fisheye reply_image*
+
+16. ${prefix}pencil
+Usage: *${prefix}pencil reply_image*
+
+17. ${prefix}ytcomment
+Usage: *${prefix}ytcomment username|text*
+
+18. ${prefix}phcomment
+Usage: *${prefix}phcomment username|text*
+
+19. ${prefix}harta
+Usage: *${prefix}harta text*
+
+20. ${prefix}pornhub
+Usage: *${prefix}pornhub text*
+
+21. ${prefix}glitch
+Usage: *${prefix}glitch text*
+
+22. ${prefix}blackpink
+Usage: *${prefix}blackpink text*
+
+23. ${prefix}neon
+Usage: *${prefix}neon text*
+
+. ${prefix}foliokanan
+Usage: *${prefix}foliokanan text*
+
+. ${prefix}foliokiri
+Usage: *${prefix}folio kiri*
+
+. ${prefix}nuliskanan
+Usage: *${prefix}nuliskanan text*
+
+. ${prefix}nuliskiri
+Usage: *${prefix}nuliskiri text*
     `
 }
 
@@ -511,6 +598,32 @@ Usage: *${prefix}bisakah* text
 3. ${prefix}rate
 Usage: *${prefix}rate* pertanyaan
 
+4. ${prefix}truth
+Usage: *-*
+
+5. ${prefix}dare
+Usage: *-*
+
+6. ${prefix}hobby
+Usage: *-*
+
+7. ${prefix}rate
+Usage: *-*
+
+8. ${prefix}seberapagay
+Usage: *-*
+
+9. ${prefix}cantik
+Usage: *-*
+
+10. ${prefix}jadian
+Usage: *jadian*
+
+11. ${prefix}ganteng
+Usage: *-*
+
+12. ${prefix}sange
+Usage: *-*
     `
 }
 
@@ -823,7 +936,7 @@ usage: *-*
 usage: *${prefix}movie query*
 
 9. ${prefix}kalkulator
-usage: *${prefix}kalkulator 1+1*
+usage: *${prefix}math 1*1|1:1|1+1|1-1*
 
 10. ${prefix}jarak
 usage: *${prefix}jarak query*
@@ -878,6 +991,21 @@ usage: *${prefix}delimage name*
 
 27. ${prefix}listimage
 usage: *-*
+
+28. ${prefix}shortlink
+Usage: *${prefix}shortlink link*
+
+29. ${prefix}translate
+Usage: *${prefix}translate kode_bahasa textnya*
+
+30. ${prefix}fact
+Usage: *-*
+
+31. ${prefix}katabijak
+Usage: *-*
+
+32. ${prefix}quotes
+Usage: *-*
     `
 }
 

@@ -655,7 +655,7 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 xinz.sendButtonsLoc(from, `Hai Kak @${sender.split('@')[0]}\n\nSaya Felix, Bot WhatsApp yg membantu kamu untuk mempermudah sesuatu seperti Membuat Sticker dan Lainnya, Ada Butuh Info Dariku?`, `Note: Kalo kamu pakai wa lama atau mod, dan button ga keliatan, langsung aja ketik ${prefix}allmenu`, qqppp, fs.readFileSync(setting.pathImg), [sender])
                 }
                 break
-             case prefix+'allmenu': case prefix+'menuall'{
+             case prefix+'allmenu': case prefix+'menuall':{
                     try {
                         var pic = await xinz.getProfilePicture(sender)
                     } catch {

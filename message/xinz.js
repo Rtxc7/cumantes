@@ -98,10 +98,6 @@ const bgbot = 'https://i.ibb.co/Rpdfnwh/images-q-tbn-ANd9-Gc-Tmn-q-Sq-E0m-Fr-QUE
 let tebakgambar = [];
 let family100 = [];
 let tictactoe = [];
-let tebakbendera = [];
-let tebaklirik = [];
-let siapaaku = [];
-let mathkuis = [];
 
 let { ownerNumber, limitCount, lolkey, zekskey, gamewaktu, tobzkey, aqulzkey } = setting
 moment.tz.setDefault("Asia/Jakarta").locale("id");
@@ -468,10 +464,6 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
         // GAME 
         game.cekWaktuFam(xinz, family100)
         game.cekWaktuTG(xinz, tebakgambar)
-        game.cekWaktuTB(xinz, tebakbendera)
-        game.cekWaktuTL(xinz, tebaklirik)
-        game.cekWaktuSA(xinz, siapaaku)
-        game.cekWaktuMK(xinz, mathkuis)
         
 
         // GAME 
@@ -494,27 +486,6 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                     }
                 xinz.sendListMsg(from, `Selamat @${sender.split('@')[0]}`, `*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTG(from, tebakgambar)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}tebakgambar*`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null, [sender])
                 tebakgambar.splice(game.getTGPosi(from, tebakgambar), 1)
-            }
-        }
-            if (game.isMathKuis(from, mathkuis) && isUser){
-            if (chats.toLowerCase().includes(game.getJawabanMK(from, mathkuis))){
-                var htgm = randomNomor(100)
-                addBalance(sender, htgm, balance)
-                let list = []
-                let kuispref = [`family100`,`tebakgambar`]
-                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
-                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
-                let startnum = 0 ; let startnumm = 0
-                    for (let x of kuispref) {
-                        const yyyy = {
-                        title: `${kuistitle[startnum++]}`,
-                        description: `${kuisdesk[startnumm++]}`,
-                        rowId: `${prefix}${x}`
-                      }
-                        list.push(yyyy)
-                    }
-                xinz.sendListMsg(from, `Selamat @${sender.split('@')[0]}`, `*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanMK(from, mathkuis)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}mathkuis*`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null, [sender])
-                mathkuis.splice(game.getMKPosi(from, mathkuis), 1)
             }
         }
         if (game.isfam(from, family100) && isUser){

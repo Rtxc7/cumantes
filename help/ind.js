@@ -442,28 +442,25 @@ usage: *${prefix}suit batu/gunting/kertas*
 2. ${prefix}slot
 usage: *-*
 
-3. ${prefix}tictactoe
-usage: *${prefix}tictactoe @tag*
-
-4. ${prefix}dadu
+3. ${prefix}dadu
 usage: *${prefix}dadu 1/6*
 
-5. ${prefix}tebakgambar
+4. ${prefix}tebakgambar
 usage: *-*
 
-6. ${prefix}family100
+5. ${prefix}family100
 usage: *-*
 
-7. ${prefix}asupan
+6. ${prefix}asupan
 usage: *-*
 
-8. ${prefix}joke
+7. ${prefix}joke
 usage: *-*
 
-9. ${prefix}meme
+8. ${prefix}meme
 usage: *-*
 
-10. ${prefix}wpsearch
+9. ${prefix}wpsearch
 usage: *${prefix}wpsearch judul*
 
 10. ${prefix}subreddit

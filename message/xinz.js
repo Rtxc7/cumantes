@@ -33,6 +33,7 @@ const util = require("util");
 const nhSearch = require('nhentai-node-api');
 const nhentai = require('nhentai-js');
 const mathjs = require('mathjs');
+const Ra = require('ra-api')
 const tts = require('node-gtts');
 const FormData = require('form-data');
 const getMime = require('file-type');
@@ -1554,6 +1555,51 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                }
                 }
                 break
+                case prefix+'mlewd': case prefix+'mlewds': case prefix+'multilewd': case prefix+'multilewds': {
+                if (!isPremium) return reply(mess.OnlyPrem)
+                if (isGroup && !isNsfw) return reply(ind.notNsfw())
+                   var tag = ['ecchi', 'lewdanimegirls', 'hentai', 'hentaifemdom', 'hentaiparadise', 'hentai4everyone', 'animearmpits', 'animefeets', 'animethighss', 'animebooty', 'biganimetiddies', 'animebellybutton', 'sideoppai', 'ahegao']
+                   var randTag = tag[Math.floor(Math.random() * tag.length)]
+                   console.log(`Searching lewd from ${randTag} subreddit...`)
+                    fetchJson(`https://meme-api.herokuapp.com/gimme/${randTag}/5`)
+                    .then((data) => {
+                    for (var x of data.memes) {
+                        sendFileFromUrl(from, x.url, 'ini', msg)
+                    }
+                    })
+                 .catch((err) => {
+                            sendMess(ownerNumber, `${command} Error:` + err)
+                            reply(mess.error.api)
+                        })
+                 }
+                break
+                case prefix+'multifetish': case prefix+'mfetish': {
+                if (!isPremium) return reply(mess.OnlyPrem)
+                if (isGroup && !isNsfw) return reply(ind.notNsfw())
+                if (!q) return reply(`Contoh penggunaan ${command} pussy`)
+                var listfet = ['ecchi', 'lewdanimegirls', 'hentai', 'hentaifemdom', 'hentaiparadise', 'hentai4everyone', 'animearmpits', 'animefeets', 'animethighss', 'animebooty', 'biganimetiddies', 'animebellybutton', 'sideoppai', 'ahegao', 'hentaianal', 'anal', 'pussy', 'animepussy', 'yaoi', 'yuri', 'hentaiblowjob', 'blowjob', 'futanari', 'kitsunehentai', 'midriffhentai', 'erohentai', 'cumhentai', 'paizuri']
+                var anu = q.toLowerCase()
+                if (!listfet.includes(q)) {
+                let teks = `List Fetish :\n\n`
+                for (let x of listfet) {
+                teks += `${x}\n`
+                }
+                teks += `\nContoh penggunaan : ${command} pussy`
+                reply(teks)
+                }
+                console.log(`Searching fetish from ${q} subreddit...`)
+                fetchJson(`https://meme-api.herokuapp.com/gimme/${anu}/5`)
+                .then((data) => {
+                 for (var x of data.memes) {
+                        sendFileFromUrl(from, x.url, 'ini', msg)
+                    }
+                    })
+                 .catch((err) => {
+                            sendMess(ownerNumber, `${command} Error:` + err)
+                            reply(mess.error.api)
+                        })
+                 }
+                    break
            case prefix+'nekosearch': {
                 if (!isPremium) return reply(mess.OnlyPrem)
                 if (isGroup && !isNsfw) return reply(ind.notNsfw())
@@ -1573,6 +1619,19 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         })
 }
                     break
+            case prefix+'lirik': case prefix+'lyrics': case prefix+'lyric':{
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                Ra.Musikmatch(q)
+                .then((kontlo)=>{
+                    sendFileFromUrl(from, kontlo.result.thumb, kontlo.result.judul + '\n' + kontlo.result.penyanyi + '\n\n' + kontlo.result.lirik, msg)
+                    limitAdd(sender, limit)
+                })
+                 .catch((err) => {
+                            sendMess(ownerNumber, `${command} Error:` + err)
+                            reply(mess.error.api)
+                        })
+            }
+                break
             case prefix+'brainlysearch': {
                 if (!isPremium) return reply(mess.OnlyPrem)
                 fetchJson(`https://api.lolhuman.xyz/api/brainly?apikey=${lolkey}&query=${q}`)
@@ -4510,13 +4569,45 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                      var nom = 0
                      _level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
                     for (let i = 0; i < 10; i++) {
-                        var roless = 'Copper'
-                        if (_level[i].level <= 25) {
-                            roless = 'Silver'
+                        var roless = 'Copper V'
+                        if (_level[i].level <= 5) {
+                            roless = 'Copper IV'
+                        } else if (_level[i].level <= 10) {
+                            roless = 'Copper III'
+                        } else if (_level[i].level <= 15) {
+                            roless = 'Copper II'
+                        } else if (_level[i].level <= 20) {
+                            roless = 'Copper I'
+                        } else if (_level[i].level <= 25) {
+                            roles = 'Silver V'
+                        } else if (_level[i].level <= 30) {
+                            roless = 'Silver IV'
+                        } else if (_level[i].level <= 35) {
+                            roless = 'Silver III'
+                        } else if (_level[i].level <= 40) {
+                            roless = 'Silver II'
+                        } else if (_level[i].level <= 45) {
+                            roless = 'Silver I'
                         } else if (_level[i].level <= 50) {
-                            roless = 'Gold'
+                            roless = 'Gold V'
+                        } else if (_level[i].level <= 55) {
+                            roless = 'Gold IV'
+                        } else if (_level[i].level <= 60) {
+                            roless = 'Gold III'
+                        } else if (_level[i].level <= 65) {
+                            roless = 'Gold II'
+                        } else if (_level[i].level <= 70) {
+                            roless = 'Gold I'
                         } else if (_level[i].level <= 75) {
-                            roless = 'Platinum'
+                            roless = 'Platinum V'
+                        } else if (_level[i].level <= 80) {
+                            roless = 'Platinum IV'
+                        } else if (_level[i].level <= 85) {
+                            roless = 'Platinum III'
+                        } else if (_level[i].level <= 90) {
+                            roless = 'Platinum II'
+                        } else if (_level[i].level <= 95) {
+                            roless = 'Platinum I'
                         } else if (_level[i].level < 100) {
                             roless = 'Exterminator'
                         }

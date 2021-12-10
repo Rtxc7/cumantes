@@ -946,8 +946,8 @@ usage: *-*
 8. ${prefix}movie
 usage: *${prefix}movie query*
 
-9. ${prefix}kalkulator
-usage: *${prefix}math 1*1|1:1|1+1|1-1*
+9. ${prefix}math
+usage: *${prefix}math 1*1|1/1|1+1|1-1*
 
 10. ${prefix}jarak
 usage: *${prefix}jarak query*
@@ -961,19 +961,19 @@ usage: *-*
 13. ${prefix}resepmasakan
 usage: *${prefix}resepmasakan query*
 
-14. ${prefix}resep*
+14. ${prefix}resep
 usage: *-*
 
-15. ${prefix}wallpapersearch*
+15. ${prefix}wallpapersearch
 usage: *${prefix}wallpalersearch query*
 
-16. ${prefix}wiki*
+16. ${prefix}wiki
 usage: *${prefix}wiki query*
 
-17. ${prefix}wikien*
+17. ${prefix}wikien
 usage: *${prefix}wikien query*
 
-18. ${prefix}google*
+18. ${prefix}google
 usage: *${prefix}google text*
 
 19. ${prefix}addsticker

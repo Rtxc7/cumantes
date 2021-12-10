@@ -33,7 +33,6 @@ const util = require("util");
 const nhSearch = require('nhentai-node-api');
 const nhentai = require('nhentai-js');
 const mathjs = require('mathjs');
-const Ra = require('ra-api')
 const tts = require('node-gtts');
 const FormData = require('form-data');
 const getMime = require('file-type');
@@ -1555,51 +1554,6 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                }
                 }
                 break
-                case prefix+'mlewd': case prefix+'mlewds': case prefix+'multilewd': case prefix+'multilewds': {
-                if (!isPremium) return reply(mess.OnlyPrem)
-                if (isGroup && !isNsfw) return reply(ind.notNsfw())
-                   var tag = ['ecchi', 'lewdanimegirls', 'hentai', 'hentaifemdom', 'hentaiparadise', 'hentai4everyone', 'animearmpits', 'animefeets', 'animethighss', 'animebooty', 'biganimetiddies', 'animebellybutton', 'sideoppai', 'ahegao']
-                   var randTag = tag[Math.floor(Math.random() * tag.length)]
-                   console.log(`Searching lewd from ${randTag} subreddit...`)
-                    fetchJson(`https://meme-api.herokuapp.com/gimme/${randTag}/5`)
-                    .then((data) => {
-                    for (var x of data.memes) {
-                        sendFileFromUrl(from, x.url, 'ini', msg)
-                    }
-                    })
-                 .catch((err) => {
-                            sendMess(ownerNumber, `${command} Error:` + err)
-                            reply(mess.error.api)
-                        })
-                 }
-                break
-                case prefix+'multifetish': case prefix+'mfetish': {
-                if (!isPremium) return reply(mess.OnlyPrem)
-                if (isGroup && !isNsfw) return reply(ind.notNsfw())
-                if (!q) return reply(`Contoh penggunaan ${command} pussy`)
-                var listfet = ['ecchi', 'lewdanimegirls', 'hentai', 'hentaifemdom', 'hentaiparadise', 'hentai4everyone', 'animearmpits', 'animefeets', 'animethighss', 'animebooty', 'biganimetiddies', 'animebellybutton', 'sideoppai', 'ahegao', 'hentaianal', 'anal', 'pussy', 'animepussy', 'yaoi', 'yuri', 'hentaiblowjob', 'blowjob', 'futanari', 'kitsunehentai', 'midriffhentai', 'erohentai', 'cumhentai', 'paizuri']
-                var anu = q.toLowerCase()
-                if (!listfet.includes(q)) {
-                let teks = `List Fetish :\n\n`
-                for (let x of listfet) {
-                teks += `${x}\n`
-                }
-                teks += `\nContoh penggunaan : ${command} pussy`
-                reply(teks)
-                }
-                console.log(`Searching fetish from ${q} subreddit...`)
-                fetchJson(`https://meme-api.herokuapp.com/gimme/${anu}/5`)
-                .then((data) => {
-                 for (var x of data.memes) {
-                        sendFileFromUrl(from, x.url, 'ini', msg)
-                    }
-                    })
-                 .catch((err) => {
-                            sendMess(ownerNumber, `${command} Error:` + err)
-                            reply(mess.error.api)
-                        })
-                 }
-                    break
            case prefix+'nekosearch': {
                 if (!isPremium) return reply(mess.OnlyPrem)
                 if (isGroup && !isNsfw) return reply(ind.notNsfw())
@@ -1619,19 +1573,6 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         })
 }
                     break
-            case prefix+'lirik': case prefix+'lyrics': case prefix+'lyric':{
-                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                Ra.Musikmatch(q)
-                .then((kontlo)=>{
-                    sendFileFromUrl(from, kontlo.result.thumb, kontlo.result.judul + '\n' + kontlo.result.penyanyi + '\n\n' + kontlo.result.lirik, msg)
-                    limitAdd(sender, limit)
-                })
-                 .catch((err) => {
-                            sendMess(ownerNumber, `${command} Error:` + err)
-                            reply(mess.error.api)
-                        })
-            }
-                break
             case prefix+'brainlysearch': {
                 if (!isPremium) return reply(mess.OnlyPrem)
                 fetchJson(`https://api.lolhuman.xyz/api/brainly?apikey=${lolkey}&query=${q}`)
@@ -5148,6 +5089,7 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                 }
                 break
             case prefix+'join':
+                if (!isPremium) return reply(mess.OnlyPrem)
                 if (args.length < 2) return reply(`Kirim perintah *${prefix}join* link grup`)
                 if (!isUrl(args[1]) && !args[1].includes('chat.whatsapp.com')) return reply(mess.error.Iv)
                 let code = args[1].replace('https://chat.whatsapp.com/', '')

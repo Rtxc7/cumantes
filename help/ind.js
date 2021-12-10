@@ -247,25 +247,31 @@ usage: *${prefix}playmp3 judul*
 10. ${prefix}igstory
 usage: *${prefix}igstory query*
 
-11. ${prefix}cocofun
+11. ${prefix}hintt
+usage: *${prefix}hintt text*
+
+12. ${prefix}sendfile
+usage: *${prefix}sendfile name*
+
+13. ${prefix}cocofun
 usage: *${prefix}cocofun link*
 
-12. ${prefix}smule
+14. ${prefix}smule
 usage: *${prefix}smule link*
 
-13. ${prefix}instagram
+15. ${prefix}instagram
 usage: *${prefix}instagram link*
 
-14. ${prefix}facebook
+16. ${prefix}facebook
 usage: *${prefix}facebook link*
 
-15. ${prefix}ytsearch
+17. ${prefix}ytsearch
 usage: *${prefix}ytsearch judul*
 
-16. ${prefix}igstalk
+18. ${prefix}igstalk
 usage: *${prefix}igstalk username*
 
-17. ${prefix}ghstalk
+19. ${prefix}ghstalk
 usage: *${prefix}ghstalk username*
     `
 }
@@ -481,10 +487,13 @@ usage: *${prefix}wpsearch judul*
 10. ${prefix}subreddit
 usage: *${prefix}subreddit query*
 
-11. ${prefix}memeindo
+11. ${prefix}fuckmylife
 usage: *-*
 
-12. ${prefix}darkjoke
+12. ${prefix}memeindo
+usage: *-*
+
+13. ${prefix}darkjoke
 usage: *-*
     `
 }
@@ -1037,14 +1046,17 @@ exports.menuPrice = (owner, pushname) => {
     return `
 *── 「 PRICE LIST 」 ──*
  
-*Hai kak  *${pushname}*
+*Hai kak  ${pushname}*
 *Harga Sewa Bot*
 *15K/Group Selama 1 Bulan*
 
 *Pembayaran Bisa Melalui Metode Pembayaran di Bawah:*
 
--Saweria
--Pulsa
+-Saweria:
+https://saweria.co/felixbot
+
+-Pulsa:
+081462239208
 
 
 *_note_*:
@@ -1064,8 +1076,11 @@ exports.UpToPremi = (ownerNumber, prefix) => {
 ♲ *Dapat Informasi Lebih dulu akan Update, Nomor Bot Baru (Jika Terbanned), dan Lainnya*
 
 *Jika Tertarik,Kalian Bisa Bayar Melalui Metode Pembayaran di Bawah:*
-Pulsa = 081462239208*
-*Qris pada gambar diatas*
+
+*Pulsa = 081462239208*
+
+*Saweria = https://saweria.co/felixbot*
+
 
 *Info Lebih Lengkap Chat Owner, Ketik ${prefix}owner
 *_note_*:

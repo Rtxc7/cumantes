@@ -654,9 +654,9 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                     const Limitnya = isPremium ? `UNLIMITED*\n*Expire : ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).days} day(s) ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).hours} hour(s) ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).minutes} minute(s)` : `${getLimit(sender, limitCount, limit)}`
                     var b = xinz.mode
                     let qqppp = [{
-                    "buttonId": `${prefix}sc`,
+                    "buttonId": `${prefix}sewabot`,
                     "buttonText": {
-                        "displayText": "SCRIPT BOT"
+                        "displayText": "SEWA BOT"
                     },
                     "type": "RESPONSE"
                     }]

@@ -203,10 +203,15 @@ exports.menu = (prefix, ucap, pushname2, jumlahUser, timebot, owner, jumlahHaria
 └────❉ *FELIX BOT* ❉
 
 
-*Note* 🎉
+*Note* 「 🎉 」
 
 *Bot Ini Dalam Tahap Pengembangan* 😀
-*Mohon Lapor Owner Jika Ada Fitur Yang Eror!* 🙏
+*Mohon Lapor Owner Jika Ada Fitur Yang Eror!* 🙏🤗
+
+
+*Ingfo* 「 🤝 」
+
+*Ingin Memasukan Bot? Kalian Bisa Sewa Bot Hanya 15K Perbulan, Sudah Termasuk Premium🙏
 
 
 *Sponsor By @0*
@@ -321,6 +326,9 @@ usage: *${prefix}addrespon textnya|responnya*
 
 12. ${prefix}delrespon
 usage: *${prefix}delrespon text*
+
+13. ${prefix}join
+usage: *${prefix}join link_grup*
 `
 }
 
@@ -1036,9 +1044,6 @@ usage: *${prefix}report keluhan*
 
 7. ${prefix}rules
 usage: *-*
-
-8. ${prefix}join
-usage: *${prefix}join link_grup*
     `
 }
 

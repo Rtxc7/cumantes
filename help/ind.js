@@ -211,7 +211,7 @@ exports.menu = (prefix, ucap, pushname2, jumlahUser, timebot, owner, jumlahHaria
 
 *Ingfo* 「 🤝 」
 
-*Ingin Memasukan Bot? Kalian Bisa Sewa Bot Hanya 15K Perbulan, Sudah Termasuk Premium🙏
+*Ingin Memasukan Bot? Kalian Bisa Sewa Bot Hanya 15K Perbulan, Sudah Termasuk Premium* 🙏
 
 
 *Sponsor By @0*

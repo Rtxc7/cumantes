@@ -93,10 +93,14 @@ global.hit = {}
 const bgbot = 'https://i.ibb.co/Rpdfnwh/images-q-tbn-ANd9-Gc-Tmn-q-Sq-E0m-Fr-QUEpar-Wd-L-GK5u-Rb-M9661-Xw-usqp-CAU.jpg'
 
 
-// Game
 let tebakgambar = [];
-let family100 = [];
+let kuis = [];
+let kimiakuis = [];
+let tebakbendera = [];
+let tebaklirik = [];
+let siapaaku = [];
 let mathkuis = [];
+let family100 = [];
 
 let { ownerNumber, limitCount, lolkey, zekskey, gamewaktu, tobzkey, aqulzkey } = setting
 moment.tz.setDefault("Asia/Jakarta").locale("id");

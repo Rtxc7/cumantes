@@ -480,7 +480,6 @@ game.cekWaktuFam(xinz, family100)
         game.cekWaktuSA(xinz, siapaaku)
         game.cekWaktuKK(xinz, kimiakuis)
         game.cekWaktuMK(xinz, mathkuis)
-        game.cekWaktuSimih(simi)
 
 
         // GAME 

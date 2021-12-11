@@ -468,30 +468,72 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
 
         
         // GAME 
-        game.cekWaktuFam(xinz, family100)
+game.cekWaktuFam(xinz, family100)
         game.cekWaktuTG(xinz, tebakgambar)
-        
+        game.cekWaktuK(xinz, kuis)
+        game.cekWaktuTB(xinz, tebakbendera)
+        game.cekWaktuTL(xinz, tebaklirik)
+        game.cekWaktuSA(xinz, siapaaku)
+        game.cekWaktuKK(xinz, kimiakuis)
+        game.cekWaktuMK(xinz, mathkuis)
+        game.cekWaktuSimih(simi)
+
 
         // GAME 
         if (game.isTebakGambar(from, tebakgambar) && isUser){
             if (chats.toLowerCase().includes(game.getJawabanTG(from, tebakgambar))){
                 var htgm = randomNomor(100)
                 addBalance(sender, htgm, balance)
-                let list = []
-                let kuispref = [`family100`,`tebakgambar`]
-                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
-                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
-                let startnum = 0 ; let startnumm = 0
-                    for (let x of kuispref) {
-                        const yyyy = {
-                        title: `${kuistitle[startnum++]}`,
-                        description: `${kuisdesk[startnumm++]}`,
-                        rowId: `${prefix}${x}`
-                      }
-                        list.push(yyyy)
-                    }
-                xinz.sendListMsg(from, `Selamat @${sender.split('@')[0]}`, `*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTG(from, tebakgambar)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}tebakgambar*`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null, [sender])
+                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTG(from, tebakgambar)}\n*Hadiah :* $${htgm}\n\nIngin bermain lagi? kirim *${prefix}tebakgambar*`)
                 tebakgambar.splice(game.getTGPosi(from, tebakgambar), 1)
+            }
+        }
+        if (game.isKuis(from, kuis) && isUser){
+            if (chats.toLowerCase().includes(game.getJawabanKuis(from, kuis))){
+                var htgmk = randomNomor(100)
+                addBalance(sender, htgmk, balance)
+                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanKuis(from, kuis)}\n*Hadiah :* $${htgmk}\n\nIngin bermain lagi? kirim *${prefix}kuis*`)
+                kuis.splice(game.getKuisPosi(from, kuis), 1)
+            }
+        }
+        if (game.isTebakBendera(from, tebakbendera) && isUser){
+            if (chats.toLowerCase().includes(game.getJawabanTB(from, tebakbendera))){
+                var htgmkq = randomNomor(100)
+                addBalance(sender, htgmkq, balance)
+                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTB(from, tebakbendera)}\n*Hadiah :* $${htgmkq}\n\nIngin bermain lagi? kirim *${prefix}tebakbendera*`)
+                tebakbendera.splice(game.getTBPosi(from, tebakbendera), 1)
+            }
+        }
+        if (game.isTebakLirik(from, tebaklirik) && isUser){
+            if (chats.toLowerCase().includes(game.getJawabanTL(from, tebaklirik))){
+                var htgmkw = randomNomor(100)
+                addBalance(sender, htgmkw, balance)
+                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanTL(from, tebaklirik)}\n*Hadiah :* $${htgmkw}\n\nIngin bermain lagi? kirim *${prefix}tebaklirik*`)
+                tebaklirik.splice(game.getTLPosi(from, tebaklirik), 1)
+            }
+        }
+        if (game.isSiapaAku(from, siapaaku) && isUser){
+            if (chats.toLowerCase().includes(game.getJawabanSA(from, siapaaku))){
+                var htgmke = randomNomor(100)
+                addBalance(sender, htgmke, balance)
+                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanSA(from, siapaaku)}\n*Hadiah :* $${htgmke}\n\nIngin bermain lagi? kirim *${prefix}siapaaku*`)
+                siapaaku.splice(game.getSAPosi(from, siapaaaku), 1)
+            }
+        }
+        if (game.isKimiaKuis(from, kimiakuis) && isUser){
+            if (chats.includes(game.getJawabanKK(from, kimiakuis))){
+                var htgmkr = randomNomor(100)
+                addBalance(sender, htgmkr, balance)
+                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanKK(from, kimiakuis)}\n*Hadiah :* $${htgmkr}\n\nIngin bermain lagi? kirim *${prefix}kimiakuis*`)
+                kimiakuis.splice(game.getKKPosi(from, kimiakuis), 1)
+            }
+        }
+        if (game.isMathKuis(from, mathkuis) && isUser){
+            if (chats.toLowerCase().includes(game.getJawabanMK(from, mathkuis))){
+                var htgmkt = randomNomor(100)
+                addBalance(sender, htgmkt, balance)
+                await reply(`*Selamat jawaban kamu benar*\n*Jawaban :* ${game.getJawabanMK(from, mathkuis)}\n*Hadiah :* $${htgmkt}\n\nIngin bermain lagi? kirim *${prefix}mathkuis*`)
+                mathkuis.splice(game.getMKPosi(from, mathkuis), 1)
             }
         }
         if (game.isfam(from, family100) && isUser){
@@ -506,20 +548,7 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 }
             }
             if (anjuy.length < 1){
-                let list = []
-                let kuispref = [`family100`,`tebakgambar`]
-                let kuisdesk = [`Game Dimana berusaha menebak jawaban terbanyak berdasarkan survey 100 orang`,`Game kombinasi beberapa gambar yang apabila dirangkai dapat menjadi sebuah kata`]
-                let kuistitle = [`Family100 Game`,`Tebak Gambar`]
-                let startnum = 0 ; let startnumm = 0
-                    for (let x of kuispref) {
-                        const yyyy = {
-                        title: `${kuistitle[startnum++]}`,
-                        description: `${kuisdesk[startnumm++]}`,
-                        rowId: `${prefix}${x}`
-                      }
-                        list.push(yyyy)
-                    }
-                xinz.sendListMsg(from, `Family Game`, `Semua jawaban sudah tertebak\nKirim *${prefix}family100* untuk bermain lagi`, `Ingin bermain kuis lain? Pilih dibawah`,`Pilih Disini`, `List Kuis`, list, null)
+                xinz.sendMessage(from, `Semua jawaban sudah tertebak\nKirim *${prefix}family100* untuk bermain lagi`, text)
                 family100.splice(game.getfamposi(from, family100), 1)
             }
         }
@@ -4706,7 +4735,7 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                     addBalance(sender, hadiaq, balance)
                    }
                 break
-            case prefix+'tebakgambar':{
+                        case prefix+'tebakgambar':{
                 if (!isGroup)return reply(mess.OnlyGrup)
                 if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
                 if (game.isTebakGambar(from, tebakgambar)) return reply(`Masih ada soal yang belum di selesaikan`)
@@ -4714,9 +4743,82 @@ _Harap tunggu sebentar, media akan segera dikirim_`
                 let anih = anu.result.answer.toLowerCase()
                 game.addgambar(from, anih, gamewaktu, tebakgambar)
                 const petunjuk = anu.result.answer.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
-                let be = await xinz.prepareMessage(from, await getBuffer(anu.result.image), image)
-                let qweriio = be.message["ephemeralMessage"] ? be.message.ephemeralMessage : be
-                xinz.sendButtons(from, `Tebak Gambar`, monospace(`Silahkan jawab soal berikut ini\n\nWaktu : ${gamewaktu}s`), `Klik dibawah untuk petunjuk`, [{"buttonId": `${prefix}hinttt ${petunjuk}`,"buttonText": {"displayText": "HINT"},"type": "RESPONSE"}], true, null, null, qweriio.message.imageMessage)
+                sendFileFromUrl(from, anu.result.image, monospace(`Silahkan jawab soal berikut ini\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`), msg)
+                gameAdd(sender, glimit)
+            }
+                break
+            case prefix+'kuis':{
+                if (!isGroup)return reply(mess.OnlyGrup)
+                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
+                if (game.isKuis(from, kuis)) return reply(`Masih ada soal yang belum di selesaikan`)
+                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/jenaka?apikey=${lolkey}`)
+                let anih = anu.result.answer.toLowerCase()
+                game.addkuis(from, anih, gamewaktu, kuis)
+                const petunjuk = anu.result.answer.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
+                textImg(monospace(`${anu.result.question}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
+                gameAdd(sender, glimit)
+            }
+                break
+            case prefix+'kimiakuis':{
+                if (!isGroup)return reply(mess.OnlyGrup)
+                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
+                if (game.isKimiaKuis(from, kimiakuis)) return reply(`Masih ada soal yang belum di selesaikan`)
+                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/unsurkimia?apikey=${lolkey}`)
+                let anih = anu.result.lambang
+                game.addkimiakuis(from, anih, gamewaktu, kimiakuis)
+                textImg(monospace(`Tebak Sebutan Atau Lambang Kimia dari Unsur ${anu.result.nama}\n\nPetunjuk : -\nWaktu : ${gamewaktu}s`))
+                gameAdd(sender, glimit)
+            }
+                break
+            case prefix+'siapaaku':{
+                if (!isGroup)return reply(mess.OnlyGrup)
+                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
+                if (game.isSiapaAku(from, siapaaku)) return reply(`Masih ada soal yang belum di selesaikan`)
+                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/siapaaku?apikey=${lolkey}`)
+                let anih = anu.result.answer.toLowerCase()
+                game.addsiapaaku(from, anih, gamewaktu, siapaaku)
+                const petunjuk = anu.result.answer.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
+                textImg(monospace(`${anu.result.question}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
+                gameAdd(sender, glimit)
+            }
+                break
+            case prefix+'tebaklirik':{
+                if (!isGroup)return reply(mess.OnlyGrup)
+                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
+                if (game.isTebakLirik(from, tebaklirik)) return reply(`Masih ada soal yang belum di selesaikan`)
+                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/lirik?apikey=${lolkey}`)
+                let anih = anu.result.answer.toLowerCase()
+                game.addtebaklirik(from, anih, gamewaktu, tebaklirik)
+                const petunjuk = anu.result.answer.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
+                textImg(monospace(`${anu.result.question}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
+                gameAdd(sender, glimit)
+            }
+                break
+            case prefix+'mathkuis':{
+                if (!isGroup)return reply(mess.OnlyGrup)
+                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
+                if (game.isMathKuis(from, mathkuis)) return reply(`Masih ada soal yang belum di selesaikan`)
+                var angka1 = Math.ceil(Math.random() * 1000)
+                var angka2 = Math.ceil(Math.random() * 1000)
+                var format = ['/','*','+','-']
+                var rendom = format[Math.floor(Math.random() * format.length)]
+                var soal = angka1 + rendom + angka2
+                let anih = `${mathjs.evaluate(soal)}`
+                game.addmathkuis(from, anih, gamewaktu, mathkuis)
+                const petunjuk = anih.replace(/[1|3|5|7|9]/gi, '_')
+                textImg(monospace(`${angka1} ${rendom.replace('/', ':').replace('*', '×')} ${angka2}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
+                gameAdd(sender, glimit)
+            }
+                break
+            case prefix+'tebakbendera':{
+                if (!isGroup)return reply(mess.OnlyGrup)
+                if (isGame(sender, isOwner, gcount, glimit)) return reply(`Limit game kamu sudah habis`)
+                if (game.isTebakBendera(from, tebakbendera)) return reply(`Masih ada soal yang belum di selesaikan`)
+                let anu = await fetchJson(`http://api.lolhuman.xyz/api/tebak/bendera?apikey=${lolkey}`)
+                let anih = anu.result.name.toLowerCase()
+                game.addkuis(from, anih, gamewaktu, tebakbendera)
+                const petunjuk = anu.result.name.replace(/[b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z]/gi, '_')
+                textImg(monospace(`Nama Negara Dari Simbol ${anu.result.flag}\n\nPetunjuk : ${petunjuk}\nWaktu : ${gamewaktu}s`))
                 gameAdd(sender, glimit)
             }
                 break

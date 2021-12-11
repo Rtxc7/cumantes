@@ -470,7 +470,6 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
         // GAME 
         game.cekWaktuFam(xinz, family100)
         game.cekWaktuTG(xinz, tebakgambar)
-        game.cekWaktuMK(xinz, mathkuis)
         
 
         // GAME 
